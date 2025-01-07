@@ -20,7 +20,7 @@ const InteractiveArt = () => {
       targetRadius: number;
     }> = [];
 
-    const colors = ['#8B5CF6', '#0EA5E9', '#1A1F2C'];
+    const colors = ['#33C3F0', '#0FA0CE', '#D3E4FD'];
     let mouseX = 0;
     let mouseY = 0;
     let isMouseDown = false;
@@ -32,7 +32,7 @@ const InteractiveArt = () => {
 
     const createParticles = () => {
       particles = [];
-      const particleCount = Math.min(50, Math.floor((canvas.width * canvas.height) / 20000));
+      const particleCount = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
 
       for (let i = 0; i < particleCount; i++) {
         particles.push({
@@ -40,8 +40,8 @@ const InteractiveArt = () => {
           y: Math.random() * canvas.height,
           radius: Math.random() * 2 + 1,
           targetRadius: Math.random() * 2 + 1,
-          dx: (Math.random() - 0.5) * 1, // Slower movement
-          dy: (Math.random() - 0.5) * 1, // Slower movement
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5,
           color: colors[Math.floor(Math.random() * colors.length)],
         });
       }
@@ -134,11 +134,8 @@ const InteractiveArt = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+    <section className="py-20 bg-gradient-to-br from-[#D3E4FD]/30 to-[#33C3F0]/5">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-accent text-center mb-12">
-          Interactive Art
-        </h2>
         <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
           <canvas
             ref={canvasRef}
