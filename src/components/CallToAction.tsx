@@ -35,7 +35,7 @@ const CallToAction = () => {
               <DialogHeader>
                 <DialogTitle>Send me a message</DialogTitle>
               </DialogHeader>
-              <ContactForm onSubmit={setIsOpen} />
+              <ContactForm onSubmitProp={setIsOpen} />
             </DialogContent>
           </Dialog>
           

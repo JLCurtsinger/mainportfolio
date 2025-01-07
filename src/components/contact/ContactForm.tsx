@@ -5,7 +5,7 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 
-export const ContactForm = ({ onSubmit: onSubmitProp }: { onSubmitProp: (isOpen: boolean) => void }) => {
+export const ContactForm = ({ onSubmitProp }: { onSubmitProp: (isOpen: boolean) => void }) => {
   const { toast } = useToast();
   const form = useForm({
     defaultValues: {
