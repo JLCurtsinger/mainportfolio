@@ -2,15 +2,25 @@ import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import InteractiveArt from "../components/InteractiveArt";
 import CallToAction from "../components/CallToAction";
+import Navbar from "../components/Navbar";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-white">
-      <Hero />
-      <Projects />
-      <InteractiveArt />
-      <CallToAction />
-    </main>
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-white pt-16">
+        <div id="hero">
+          <Hero />
+        </div>
+        <div id="projects">
+          <Projects />
+        </div>
+        <InteractiveArt />
+        <div id="contact">
+          <CallToAction />
+        </div>
+      </main>
+    </>
   );
 };
 
