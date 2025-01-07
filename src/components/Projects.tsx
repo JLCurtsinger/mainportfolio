@@ -4,7 +4,7 @@ const projects = [
   {
     title: "Xchainj",
     description: "Borrow & trade with anyone anywhere on a secure blockchain platform",
-    image: "/AppIcon.png",
+    image: "/XchainjScreenshot.png",
     link: "https://xchainj.com",
     tags: ["React", "Web3", "UI/UX"],
   },
