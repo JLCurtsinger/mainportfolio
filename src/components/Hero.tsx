@@ -4,8 +4,8 @@ const Hero = () => {
   const circles = Array.from({ length: 50 }, (_, i) => i);
   
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#D3E4FD]/30 to-[#33C3F0]/5">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(51,195,240,0.1),rgba(15,160,206,0.05))]" />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#D3E4FD]/20 to-[#33C3F0]/3">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(51,195,240,0.07),rgba(15,160,206,0.03))]" />
       
       {/* Animated circles background */}
       <div className="absolute inset-0 overflow-hidden">

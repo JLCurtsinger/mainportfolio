@@ -134,7 +134,7 @@ const InteractiveArt = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[#D3E4FD]/30 to-[#33C3F0]/5">
+    <section className="py-20 bg-gradient-to-br from-[#D3E4FD]/20 to-[#33C3F0]/3">
       <div className="container mx-auto px-4">
         <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
           <canvas

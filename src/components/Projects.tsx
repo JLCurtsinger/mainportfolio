@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Project One",
-    description: "A Web3 DApp with modern UI",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    title: "Xchainj",
+    description: "Borrow & trade with anyone anywhere on a secure blockchain platform",
+    image: "/AppIcon.png",
+    link: "https://xchainj.com",
     tags: ["React", "Web3", "UI/UX"],
   },
   {
