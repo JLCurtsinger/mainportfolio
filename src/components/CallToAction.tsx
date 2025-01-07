@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Button } from "./ui/button";
@@ -110,7 +110,7 @@ const CallToAction = () => {
           
           <div className="flex gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/JLCurtsinger"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-accent/5 hover:bg-accent/10 transition-colors"
@@ -118,15 +118,7 @@ const CallToAction = () => {
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-accent/5 hover:bg-accent/10 transition-colors"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href="mailto:your@email.com"
+              href="mailto:cjcurtsinger502@aol.com"
               className="p-2 rounded-full bg-accent/5 hover:bg-accent/10 transition-colors"
             >
               <Mail className="w-6 h-6" />

@@ -17,11 +17,13 @@ const InteractiveArt = () => {
       dx: number;
       dy: number;
       color: string;
+      targetRadius: number;
     }> = [];
 
     const colors = ['#8B5CF6', '#0EA5E9', '#1A1F2C'];
     let mouseX = 0;
     let mouseY = 0;
+    let isMouseDown = false;
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
@@ -30,15 +32,16 @@ const InteractiveArt = () => {
 
     const createParticles = () => {
       particles = [];
-      const particleCount = 50;
+      const particleCount = Math.min(50, Math.floor((canvas.width * canvas.height) / 20000));
 
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           radius: Math.random() * 2 + 1,
-          dx: (Math.random() - 0.5) * 2,
-          dy: (Math.random() - 0.5) * 2,
+          targetRadius: Math.random() * 2 + 1,
+          dx: (Math.random() - 0.5) * 1, // Slower movement
+          dy: (Math.random() - 0.5) * 1, // Slower movement
           color: colors[Math.floor(Math.random() * colors.length)],
         });
       }
@@ -48,9 +51,11 @@ const InteractiveArt = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
-        particle.x += particle.dx;
-        particle.y += particle.dy;
+        // Slower movement
+        particle.x += particle.dx * 0.5;
+        particle.y += particle.dy * 0.5;
 
+        // Bounce off walls
         if (particle.x < 0 || particle.x > canvas.width) particle.dx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.dy *= -1;
 
@@ -58,11 +63,22 @@ const InteractiveArt = () => {
         const dy = mouseY - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
+        // Interactive radius change
         if (distance < 100) {
-          const angle = Math.atan2(dy, dx);
-          particle.dx += Math.cos(angle) * 0.2;
-          particle.dy += Math.sin(angle) * 0.2;
+          if (isMouseDown) {
+            particle.targetRadius = Math.min(8, particle.radius + 0.5);
+            const angle = Math.atan2(dy, dx);
+            particle.dx += Math.cos(angle) * 0.1;
+            particle.dy += Math.sin(angle) * 0.1;
+          } else {
+            particle.targetRadius = Math.max(1, particle.radius - 0.1);
+          }
+        } else {
+          particle.targetRadius = particle.radius;
         }
+
+        // Smooth radius transition
+        particle.radius += (particle.targetRadius - particle.radius) * 0.1;
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
@@ -79,16 +95,41 @@ const InteractiveArt = () => {
       mouseY = e.clientY - rect.top;
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.touches[0].clientX - rect.left;
+      mouseY = e.touches[0].clientY - rect.top;
+    };
+
+    const handleMouseDown = () => {
+      isMouseDown = true;
+    };
+
+    const handleMouseUp = () => {
+      isMouseDown = false;
+    };
+
     resize();
     createParticles();
     animate();
 
     window.addEventListener('resize', resize);
     canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+    canvas.addEventListener('mousedown', handleMouseDown);
+    canvas.addEventListener('touchstart', handleMouseDown);
+    canvas.addEventListener('mouseup', handleMouseUp);
+    canvas.addEventListener('touchend', handleMouseUp);
 
     return () => {
       window.removeEventListener('resize', resize);
       canvas.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener('touchmove', handleTouchMove);
+      canvas.removeEventListener('mousedown', handleMouseDown);
+      canvas.removeEventListener('touchstart', handleMouseDown);
+      canvas.removeEventListener('mouseup', handleMouseUp);
+      canvas.removeEventListener('touchend', handleMouseUp);
     };
   }, []);
 
@@ -101,9 +142,12 @@ const InteractiveArt = () => {
         <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
           <canvas
             ref={canvasRef}
-            className="absolute inset-0 w-full h-full"
+            className="absolute inset-0 w-full h-full cursor-pointer touch-none"
           />
         </div>
+        <p className="text-center mt-4 text-sm text-accent/70">
+          Touch and hold or click and drag to interact with the particles
+        </p>
       </div>
     </section>
   );
