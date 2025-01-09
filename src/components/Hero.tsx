@@ -4,15 +4,15 @@ const Hero = () => {
   const circles = Array.from({ length: 50 }, (_, i) => i);
   
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#D3E4FD]/20 to-[#33C3F0]/3">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(51,195,240,0.07),rgba(15,160,206,0.03))]" />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#D3E4FD]/10 to-[#33C3F0]/2">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(51,195,240,0.05),rgba(15,160,206,0.02))]" />
       
       {/* Animated circles background */}
       <div className="absolute inset-0 overflow-hidden">
         {circles.map((i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-[#33C3F0]/10"
+            className="absolute rounded-full bg-[#33C3F0]/5"
             initial={{
               opacity: 0,
               scale: 0,
@@ -20,7 +20,7 @@ const Hero = () => {
               y: Math.random() * window.innerHeight,
             }}
             animate={{
-              opacity: [0, 0.5, 0],
+              opacity: [0, 0.3, 0],
               scale: [0, 1.5, 0],
               x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
@@ -57,6 +57,26 @@ const Hero = () => {
           Hi, I'm a designer and developer passionate about creating beautiful, functional experiences. 
           Specializing in UI/UX, Web3, and interactive art, I bring creative visions to life through code.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-wrap justify-center gap-4"
+        >
+          <button
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors"
+          >
+            View My Work
+          </button>
+          <button
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-6 py-3 bg-secondary text-white rounded-full hover:bg-secondary/90 transition-colors"
+          >
+            Contact Me
+          </button>
+        </motion.div>
       </div>
     </section>
   );
