@@ -15,15 +15,39 @@ export const ContactForm = ({ onSubmitProp }: { onSubmitProp: (isOpen: boolean) 
     },
   });
 
-  const onSubmit = async (data: any) => {
-    console.log("Form submitted:", data);
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+const onSubmit = async (data: any) => {
+  try {
+    const response = await fetch("https://formspree.io/f/mdoqwjeg", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     });
-    onSubmitProp(false);
-    form.reset();
-  };
+
+    if (response.ok) {
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      form.reset(); // Reset the form after submission
+    } else {
+      toast({
+        title: "Error sending message",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  } catch (error) {
+    console.error("Error submitting the form:", error);
+    toast({
+      title: "Error sending message",
+      description: "Something went wrong. Please check your connection and try again.",
+      variant: "destructive",
+    });
+  }
+  onSubmitProp(false); // Close the form modal if applicable
+};
 
   return (
     <Form {...form}>
