@@ -66,13 +66,13 @@ const Hero = () => {
         >
           <button
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors"
+            className="px-6 py-3 bg-gradient-to-r from-[#33C3F0] to-[#0FA0CE] text-white rounded-full hover:opacity-90 transition-opacity transform hover:scale-105"
           >
             View My Work
           </button>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 py-3 bg-secondary text-white rounded-full hover:bg-secondary/90 transition-colors"
+            className="px-6 py-3 bg-gradient-to-r from-[#1EAEDB] to-[#33C3F0] text-white rounded-full hover:opacity-90 transition-opacity transform hover:scale-105"
           >
             Contact Me
           </button>

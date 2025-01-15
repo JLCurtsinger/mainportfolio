@@ -30,16 +30,16 @@ const Projects = () => {
           Featured Projects
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-lg shadow-lg"
+              className="group relative overflow-hidden rounded-lg shadow-lg aspect-video"
             >
-              <div className="aspect-video overflow-hidden">
+              <div className="absolute inset-0">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -50,7 +50,7 @@ const Projects = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-accent/90 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="mb-4">{project.description}</p>
+                  <p className="mb-4 line-clamp-2">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <span
@@ -63,6 +63,16 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
+              
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 z-10 opacity-0"
+                  aria-label={`View ${project.title} project`}
+                />
+              )}
             </motion.div>
           ))}
         </div>
