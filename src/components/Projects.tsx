@@ -60,7 +60,9 @@ const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-lg shadow-lg bg-white border border-gray-200 hover:shadow-xl transition-shadow duration-300"
+              onClick={() => window.open(project.link, '_blank')}
+              className="group relative overflow-hidden rounded-lg shadow-lg bg-white border border-gray-200 
+              hover:shadow-xl transition-shadow duration-300 cursor-pointer transform hover:-translate-y-1"
             >
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-accent">{project.title}</h3>
@@ -75,16 +77,11 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors"
-                  >
-                    Visit Project
-                  </a>
-                )}
+                <button
+                  className="inline-block px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors"
+                >
+                  Visit Project
+                </button>
               </div>
             </motion.div>
           ))}
