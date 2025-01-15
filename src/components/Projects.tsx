@@ -2,23 +2,46 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "ZentraCare",
+    description: "Healthcare platform revolutionizing patient care",
+    link: "https://zentracare.com",
+    // image: "/placeholder.svg",
+    tags: ["Healthcare", "Web Platform", "UI/UX"],
+  },
+  {
+    title: "So Fire Fitness",
+    description: "Modern fitness training and wellness platform",
+    link: "https://sofirefitness.com",
+    // image: "/placeholder.svg",
+    tags: ["Fitness", "Health", "Web App"],
+  },
+  {
     title: "Xchainj",
     description: "Borrow & trade with anyone anywhere on a secure blockchain platform",
-    image: "/XchainjScreenshot.png",
     link: "https://xchainj.com",
-    tags: ["React", "Web3", "UI/UX"],
+    // image: "/placeholder.svg",
+    tags: ["Blockchain", "Web3", "DeFi"],
   },
   {
-    title: "Project Two",
-    description: "Interactive Art Installation",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-    tags: ["Three.js", "WebGL", "Art"],
+    title: "Roamari",
+    description: "Travel planning and exploration platform",
+    link: "https://roamari.com",
+    // image: "/placeholder.svg",
+    tags: ["Travel", "Web App", "UI/UX"],
   },
   {
-    title: "Project Three",
-    description: "Mobile-First Design System",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    tags: ["Design", "Mobile", "UI"],
+    title: "TalkLikeALocal",
+    description: "Language learning and cultural exchange platform",
+    link: "https://talklikealocal.org",
+    // image: "/placeholder.svg",
+    tags: ["Education", "Language", "Community"],
+  },
+  {
+    title: "Lesson Link",
+    description: "Educational platform connecting teachers and students",
+    link: "https://lessonlink.org",
+    // image: "/placeholder.svg",
+    tags: ["Education", "Web Platform", "EdTech"],
   },
 ];
 
@@ -30,49 +53,39 @@ const Projects = () => {
           Featured Projects
         </h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-lg shadow-lg aspect-video"
+              className="group relative overflow-hidden rounded-lg shadow-lg bg-white border border-gray-200 hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="absolute inset-0">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-accent/90 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="mb-4 line-clamp-2">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-3 py-1 bg-white/20 rounded-full text-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-accent">{project.title}</h3>
+                <p className="mb-4 text-gray-600">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors"
+                  >
+                    Visit Project
+                  </a>
+                )}
               </div>
-              
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute inset-0 z-10 opacity-0"
-                  aria-label={`View ${project.title} project`}
-                />
-              )}
             </motion.div>
           ))}
         </div>
