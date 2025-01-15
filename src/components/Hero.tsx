@@ -4,15 +4,13 @@ const Hero = () => {
   const circles = Array.from({ length: 50 }, (_, i) => i);
   
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#D3E4FD]/10 to-[#33C3F0]/2">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(51,195,240,0.05),rgba(15,160,206,0.02))]" />
-      
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
       {/* Animated circles background */}
       <div className="absolute inset-0 overflow-hidden">
         {circles.map((i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-[#33C3F0]/5"
+            className="absolute rounded-full bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-orange-500/5"
             initial={{
               opacity: 0,
               scale: 0,
