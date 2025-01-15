@@ -18,30 +18,38 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Name */}
-          <a href="/" className="text-xl font-semibold text-accent hover:text-accent/80 transition-colors">
+          <a 
+            href="#hero" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("hero");
+            }}
+            className="text-xl font-semibold text-accent hover:text-accent/80 
+            transition-all duration-300 ease-out
+            relative after:content-[''] after:absolute after:w-full after:scale-x-0 
+            after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 
+            after:origin-bottom-right after:transition-transform after:duration-300 
+            hover:after:scale-x-100 hover:after:origin-bottom-left"
+          >
             Justin Curtsinger
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <button
-              onClick={() => scrollToSection("hero")}
-              className="text-accent/80 hover:text-accent transition-colors"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-accent/80 hover:text-accent transition-colors"
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-accent/80 hover:text-accent transition-colors"
-            >
-              Contact
-            </button>
+            {["hero", "projects", "contact"].map((section) => (
+              <button
+                key={section}
+                onClick={() => scrollToSection(section)}
+                className="text-accent/80 hover:text-accent 
+                transition-all duration-300 ease-out
+                relative after:content-[''] after:absolute after:w-full after:scale-x-0 
+                after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 
+                after:origin-bottom-right after:transition-transform after:duration-300 
+                hover:after:scale-x-100 hover:after:origin-bottom-left"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
@@ -50,7 +58,7 @@ const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-accent"
+              className="text-accent hover:text-accent/80 transition-colors"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -61,24 +69,17 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-              <button
-                onClick={() => scrollToSection("hero")}
-                className="block w-full text-left px-3 py-2 text-accent/80 hover:text-accent hover:bg-accent/5 rounded-md transition-colors"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="block w-full text-left px-3 py-2 text-accent/80 hover:text-accent hover:bg-accent/5 rounded-md transition-colors"
-              >
-                Projects
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="block w-full text-left px-3 py-2 text-accent/80 hover:text-accent hover:bg-accent/5 rounded-md transition-colors"
-              >
-                Contact
-              </button>
+              {["hero", "projects", "contact"].map((section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className="block w-full text-left px-3 py-2 text-accent/80 
+                  hover:text-accent hover:bg-accent/5 rounded-md 
+                  transition-all duration-300 ease-out"
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              ))}
             </div>
           </div>
         )}

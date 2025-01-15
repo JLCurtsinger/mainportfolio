@@ -31,8 +31,9 @@ const Hero = () => {
         >
           <motion.button
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 py-3 bg-primary text-white rounded-full 
-            hover:bg-primary/90 active:bg-primary/80
+            className="px-6 py-3 bg-[#7E69AB] text-white rounded-full 
+            hover:bg-[#6E59A5] hover:shadow-[0_0_15px_rgba(126,105,171,0.5)]
+            active:bg-[#6E59A5]/90
             transition-all duration-300 ease-out"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -42,8 +43,9 @@ const Hero = () => {
           
           <motion.button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 py-3 bg-secondary text-white rounded-full 
-            hover:bg-secondary/90 active:bg-secondary/80
+            className="px-6 py-3 bg-[#8E9196] text-white rounded-full 
+            hover:bg-[#7A7D82] hover:shadow-[0_0_15px_rgba(142,145,150,0.5)]
+            active:bg-[#7A7D82]/90
             transition-all duration-300 ease-out"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
