@@ -64,18 +64,31 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-wrap justify-center gap-4"
         >
-          <button
+          <motion.button
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 py-3 bg-gradient-to-r from-[#33C3F0] to-[#0FA0CE] text-white rounded-full hover:opacity-90 transition-opacity transform hover:scale-105"
+            className="relative px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 text-white rounded-full 
+            hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] active:shadow-[0_0_10px_rgba(139,92,246,0.3)]
+            transition-all duration-300 ease-out overflow-hidden group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            View My Work
-          </button>
-          <button
+            <span className="absolute inset-0 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 opacity-0 
+            group-hover:opacity-100 transition-opacity duration-300 ease-out" />
+            <span className="relative z-10">View My Work</span>
+          </motion.button>
+          
+          <motion.button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 py-3 bg-gradient-to-r from-[#1EAEDB] to-[#33C3F0] text-white rounded-full hover:opacity-90 transition-opacity transform hover:scale-105"
+            className="relative px-6 py-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white rounded-full 
+            hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] active:shadow-[0_0_10px_rgba(59,130,246,0.3)]
+            transition-all duration-300 ease-out overflow-hidden group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Contact Me
-          </button>
+            <span className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 opacity-0 
+            group-hover:opacity-100 transition-opacity duration-300 ease-out" />
+            <span className="relative z-10">Contact Me</span>
+          </motion.button>
         </motion.div>
       </div>
     </section>
