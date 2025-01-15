@@ -2,10 +2,33 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   const circles = Array.from({ length: 50 }, (_, i) => i);
+  const waves = Array.from({ length: 3 }, (_, i) => i);
   
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
-      {/* Animated circles background */}
+      {/* Animated waves background */}
+      <div className="absolute inset-0 overflow-hidden opacity-20">
+        {waves.map((i) => (
+          <motion.div
+            key={`wave-${i}`}
+            className="absolute w-[200%] h-[60px] left-[-50%] bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10"
+            style={{
+              top: `${30 + i * 15}%`,
+            }}
+            animate={{
+              x: ["-25%", "0%", "-25%"],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 20 + i * 2,
+              ease: "linear",
+              times: [0, 0.5, 1],
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Existing animated circles background */}
       <div className="absolute inset-0 overflow-hidden">
         {circles.map((i) => (
           <motion.div
