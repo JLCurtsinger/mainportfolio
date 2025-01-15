@@ -4,10 +4,21 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const formSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
+
+type FormData = z.infer<typeof formSchema>;
 
 export const ContactForm = ({ onSubmitProp }: { onSubmitProp: (isOpen: boolean) => void }) => {
   const { toast } = useToast();
-  const form = useForm({
+  const form = useForm<FormData>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -15,39 +26,40 @@ export const ContactForm = ({ onSubmitProp }: { onSubmitProp: (isOpen: boolean) 
     },
   });
 
-const onSubmit = async (data: any) => {
-  try {
-    const response = await fetch("https://formspree.io/f/mdoqwjeg", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (response.ok) {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await fetch("https://formspree.io/f/mdoqwjeg", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
-      form.reset(); // Reset the form after submission
-    } else {
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        form.reset();
+        onSubmitProp(false);
+      } else {
+        const errorData = await response.json();
+        toast({
+          title: "Error sending message",
+          description: errorData.error || "Something went wrong. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
       toast({
         title: "Error sending message",
-        description: "Something went wrong. Please try again later.",
+        description: "Something went wrong. Please check your connection and try again.",
         variant: "destructive",
       });
     }
-  } catch (error) {
-    console.error("Error submitting the form:", error);
-    toast({
-      title: "Error sending message",
-      description: "Something went wrong. Please check your connection and try again.",
-      variant: "destructive",
-    });
-  }
-  onSubmitProp(false); // Close the form modal if applicable
-};
+  };
 
   return (
     <Form {...form}>
