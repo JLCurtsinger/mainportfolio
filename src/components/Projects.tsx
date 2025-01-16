@@ -3,51 +3,51 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "ZentraCare",
-    description: "Healthcare platform revolutionizing patient care",
+    description: "Healthcare platform revolutionizing patient care through innovative digital solutions and seamless user experience",
     link: "https://zentracare.com",
-    // image: "/placeholder.svg",
     tags: ["Healthcare", "Web Platform", "UI/UX"],
+    altText: "ZentraCare healthcare platform interface showcasing patient care management system"
   },
   {
     title: "So Fire Fitness",
-    description: "Modern fitness training and wellness platform",
+    description: "Modern fitness training and wellness platform designed for personalized workout experiences",
     link: "https://sofirefitness.com",
-    // image: "/placeholder.svg",
     tags: ["Fitness", "Health", "Web App"],
+    altText: "So Fire Fitness web application displaying workout tracking interface"
   },
   {
     title: "Xchainj",
-    description: "Borrow & trade with anyone anywhere on a secure blockchain platform",
+    description: "Secure blockchain platform enabling peer-to-peer trading and borrowing with advanced DeFi features",
     link: "https://xchainj.com",
-    // image: "/placeholder.svg",
     tags: ["Blockchain", "Web3", "DeFi"],
+    altText: "Xchainj blockchain trading platform showing decentralized exchange interface"
   },
   {
     title: "Roamari",
-    description: "Travel planning and exploration platform",
+    description: "Intuitive travel planning and exploration platform with personalized recommendations",
     link: "https://roamari.com",
-    // image: "/placeholder.svg",
     tags: ["Travel", "Web App", "UI/UX"],
+    altText: "Roamari travel planning application displaying destination exploration interface"
   },
   {
     title: "TalkLikeALocal",
-    description: "Language learning and cultural exchange platform",
+    description: "Interactive language learning platform focusing on cultural immersion and practical conversation",
     link: "https://talklikealocal.org",
-    // image: "/placeholder.svg",
     tags: ["Education", "Language", "Community"],
+    altText: "TalkLikeALocal language learning platform showing interactive lesson interface"
   },
   {
     title: "Lesson Link",
-    description: "Educational platform connecting teachers and students",
+    description: "Educational platform connecting teachers and students through innovative learning tools",
     link: "https://lessonlink.org",
-    // image: "/placeholder.svg",
     tags: ["Education", "Web Platform", "EdTech"],
+    altText: "Lesson Link educational platform displaying teacher-student connection interface"
   },
 ];
 
 const Projects = () => {
   return (
-    <section className="py-20 bg-white">
+    <section aria-label="Featured Projects" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-accent text-center mb-12">
           Featured Projects
@@ -55,7 +55,7 @@ const Projects = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -78,12 +78,13 @@ const Projects = () => {
                   ))}
                 </div>
                 <button
+                  aria-label={`Visit ${project.title} project`}
                   className="inline-block px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors"
                 >
                   Visit Project
                 </button>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
