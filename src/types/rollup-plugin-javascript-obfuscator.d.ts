@@ -10,18 +10,21 @@ declare module 'rollup-plugin-javascript-obfuscator' {
     debugProtection?: boolean;
     debugProtectionInterval?: number;
     disableConsoleOutput?: boolean;
-    identifierNamesGenerator?: string;
+    identifierNamesGenerator?: 'hexadecimal' | 'mangled';
     log?: boolean;
     numbersToExpressions?: boolean;
+    optionsPreset?: string;
     renameGlobals?: boolean;
     rotateStringArray?: boolean;
     selfDefending?: boolean;
     shuffleStringArray?: boolean;
+    simplify?: boolean;
     splitStrings?: boolean;
     splitStringsChunkLength?: number;
     stringArray?: boolean;
-    stringArrayEncoding?: string[];
+    stringArrayEncoding?: Array<'none' | 'base64' | 'rc4'>;
     stringArrayThreshold?: number;
+    target?: 'browser' | 'browser-no-eval' | 'node';
     transformObjectKeys?: boolean;
     unicodeEscapeSequence?: boolean;
   }
