@@ -31,14 +31,14 @@ const projects = [
   },
   {
     title: "TalkLikeALocal",
-    description: "Interactive language learning platform focusing on cultural immersion and practical conversation",
+    description: "Learn to say things like the locals do all across the United States",
     link: "https://talklikealocal.org",
     tags: ["Education", "Language", "Community"],
     altText: "TalkLikeALocal language learning platform showing interactive lesson interface"
   },
   {
     title: "Lesson Link",
-    description: "Educational platform connecting teachers and students through innovative learning tools",
+    description: "Early literacy skill builder for 3 year olds with AI powered personalized learning paths",
     link: "https://lessonlink.org",
     tags: ["Education", "AI-powered", "EdTech"],
     altText: "Lesson Link educational platform displaying teacher-student connection interface"
