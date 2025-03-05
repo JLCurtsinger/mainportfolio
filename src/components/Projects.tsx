@@ -40,7 +40,7 @@ const projects = [
     title: "Lesson Link",
     description: "Educational platform connecting teachers and students through innovative learning tools",
     link: "https://lessonlink.org",
-    tags: ["Education", "Web Platform", "EdTech"],
+    tags: ["Education", "AI-powered", "EdTech"],
     altText: "Lesson Link educational platform displaying teacher-student connection interface"
   },
 ];
