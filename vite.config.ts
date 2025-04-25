@@ -37,7 +37,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),  // Enable React SWC compilation and fast refresh
-    mode === 'development' && componentTagger(),  // Only enable component tagging in development
+    componentTagger(),  // Lovable component tagger plugin
   ].filter(Boolean),
   resolve: {
     alias: {
