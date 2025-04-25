@@ -23,12 +23,19 @@ const projects = [
     altText: "Xchainj blockchain trading platform showing decentralized exchange interface"
   },
   {
-    title: "Roamari",
-    description: "Intuitive travel planning and exploration platform with personalized recommendations",
-    link: "https://roamari.com",
-    tags: ["Travel", "Web App", "UI/UX"],
-    altText: "Roamari travel planning application displaying destination exploration interface"
+    title: "The LZ",
+    description: "Free mental health and additional resources for veterans",
+    link: "https://thelz.org/",
+    tags: ["Military", "Web App", "Mental Health"],
+    altText: "The LZ is a site that provides free resources for veterans centered around mental health."
   },
+  // {
+  //   title: "Roamari",
+  //   description: "Intuitive travel planning and exploration platform with personalized recommendations",
+  //   link: "https://roamari.com",
+  //   tags: ["Travel", "Web App", "UI/UX"],
+  //   altText: "Roamari travel planning application displaying destination exploration interface"
+  // },
   {
     title: "TalkLikeALocal",
     description: "Learn to say things like the locals do all across the United States",
