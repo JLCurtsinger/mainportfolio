@@ -1,6 +1,17 @@
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const handleContactClick = () => {
+    // First scroll to contact section
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    
+    // Then trigger the dialog button click
+    const dialogTrigger = document.querySelector('[data-contact-trigger]') as HTMLButtonElement;
+    if (dialogTrigger && !document.querySelector('[role="dialog"]')) {
+      dialogTrigger.click();
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#fdfcfb] via-[#f1f0fb] to-[#e2d1c3]">
       <div className="container mx-auto px-4 py-20 relative z-10">
@@ -22,7 +33,7 @@ const Hero = () => {
           Hi, I'm a designer and developer passionate about creating beautiful, functional experiences. 
           Specializing in UI/UX, Web3, and interactive art, I bring creative visions to life through code.
         </motion.p>
-
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,7 +53,7 @@ const Hero = () => {
           </motion.button>
           
           <motion.button
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={handleContactClick}
             className="px-6 py-3 bg-[#8E9196] text-white rounded-full 
             hover:bg-[#7A7D82] hover:shadow-[0_0_15px_rgba(142,145,150,0.5)]
             active:bg-[#7A7D82]/90

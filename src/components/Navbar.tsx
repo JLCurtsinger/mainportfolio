@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
@@ -9,6 +10,14 @@ const Navbar = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      
+      // If it's the contact section, also open the modal
+      if (sectionId === 'contact') {
+        const dialogTrigger = document.querySelector('[data-contact-trigger]') as HTMLButtonElement;
+        if (dialogTrigger && !document.querySelector('[role="dialog"]')) {
+          dialogTrigger.click();
+        }
+      }
     }
     setIsOpen(false);
   };

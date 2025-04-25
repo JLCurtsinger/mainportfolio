@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
-import { ContactForm } from "./contact/ContactForm";
+import { ContactForm } from "./contact/SocialLinks";
 import { SocialLinks } from "./contact/SocialLinks";
 
 const CallToAction = () => {
@@ -28,6 +28,7 @@ const CallToAction = () => {
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
               <motion.button 
+                data-contact-trigger
                 className="relative px-8 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 text-white rounded-full 
                 hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] active:shadow-[0_0_10px_rgba(139,92,246,0.3)]
                 transition-all duration-300 ease-out overflow-hidden group"
