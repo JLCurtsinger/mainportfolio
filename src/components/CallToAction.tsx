@@ -40,7 +40,7 @@ const CallToAction = () => {
                 <span className="relative z-10">Contact Me</span>
               </motion.button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px] mx-4 sm:mx-auto">
+            <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
                 <DialogTitle>Send me a message</DialogTitle>
               </DialogHeader>
