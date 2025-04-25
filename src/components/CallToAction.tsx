@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
-import { ContactForm } from "./contact/SocialLinks";
+import { ContactForm } from "./contact/ContactForm";
 import { SocialLinks } from "./contact/SocialLinks";
 
 const CallToAction = () => {
