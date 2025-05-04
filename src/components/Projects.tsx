@@ -2,12 +2,19 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "ZentraCare",
-    description: "Healthcare platform revolutionizing patient care through innovative digital solutions and seamless user experience",
-    link: "https://zentracare.com",
-    tags: ["Healthcare", "Web Platform", "UI/UX"],
-    altText: "ZentraCare healthcare platform interface showcasing patient care management system"
+    title: "Vitacheck",
+    description: "Next-generation drug and supplement interaction checker combining AI, real-world reports, and verified datasets for unprecedented accuracy and ease of use.",
+    link: "https://vitacheck.cc",
+    tags: ["Healthcare", "Drug Safety", "AI"],
+    altText: "VitaCheck interaction checker interface displaying risk analysis of multiple substances"
   },
+  // {
+  //   title: "ZentraCare",
+  //   description: "Healthcare platform revolutionizing patient care through innovative digital solutions and seamless user experience",
+  //   link: "https://zentracare.com",
+  //   tags: ["Healthcare", "Web Platform", "UI/UX"],
+  //   altText: "ZentraCare healthcare platform interface showcasing patient care management system"
+  // },
   {
     title: "So Fire Fitness",
     description: "Modern fitness training and wellness platform designed for personalized workout experiences",
