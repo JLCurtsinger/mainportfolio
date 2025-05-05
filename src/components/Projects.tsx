@@ -8,19 +8,19 @@ const projects = [
     tags: ["Healthcare", "Drug Safety", "AI"],
     altText: "VitaCheck interaction checker interface displaying risk analysis of multiple substances"
   },
-  // {
-  //   title: "ZentraCare",
-  //   description: "Healthcare platform revolutionizing patient care through innovative digital solutions and seamless user experience",
-  //   link: "https://zentracare.com",
-  //   tags: ["Healthcare", "Web Platform", "UI/UX"],
-  //   altText: "ZentraCare healthcare platform interface showcasing patient care management system"
-  // },
   {
     title: "So Fire Fitness",
     description: "Modern fitness training and wellness platform designed for personalized workout experiences",
     link: "https://sofirefitness.com",
     tags: ["Fitness", "Health", "Web App"],
     altText: "So Fire Fitness web application displaying workout tracking interface"
+  },
+  {
+    title: "TalkLikeALocal",
+    description: "Learn to say things like the locals do all across the United States",
+    link: "https://talklikealocal.org",
+    tags: ["Education", "Language", "Community"],
+    altText: "TalkLikeALocal language learning platform showing interactive lesson interface"
   },
   {
     title: "Xchainj",
@@ -30,12 +30,19 @@ const projects = [
     altText: "Xchainj blockchain trading platform showing decentralized exchange interface"
   },
   {
+    title: "Lesson Link",
+    description: "Early literacy skill builder for 3 year olds with AI powered personalized learning paths",
+    link: "https://lessonlink.org",
+    tags: ["Education", "AI-powered", "EdTech"],
+    altText: "Lesson Link educational platform displaying teacher-student connection interface"
+  },
+  {
     title: "The LZ",
     description: "Free mental health and additional resources for veterans",
     link: "https://thelz.org/",
     tags: ["Military", "Web App", "Mental Health"],
     altText: "The LZ is a site that provides free resources for veterans centered around mental health."
-  },
+  }
   // {
   //   title: "Roamari",
   //   description: "Intuitive travel planning and exploration platform with personalized recommendations",
@@ -43,20 +50,13 @@ const projects = [
   //   tags: ["Travel", "Web App", "UI/UX"],
   //   altText: "Roamari travel planning application displaying destination exploration interface"
   // },
-  {
-    title: "TalkLikeALocal",
-    description: "Learn to say things like the locals do all across the United States",
-    link: "https://talklikealocal.org",
-    tags: ["Education", "Language", "Community"],
-    altText: "TalkLikeALocal language learning platform showing interactive lesson interface"
-  },
-  {
-    title: "Lesson Link",
-    description: "Early literacy skill builder for 3 year olds with AI powered personalized learning paths",
-    link: "https://lessonlink.org",
-    tags: ["Education", "AI-powered", "EdTech"],
-    altText: "Lesson Link educational platform displaying teacher-student connection interface"
-  },
+    // {
+  //   title: "ZentraCare",
+  //   description: "Healthcare platform revolutionizing patient care through innovative digital solutions and seamless user experience",
+  //   link: "https://zentracare.com",
+  //   tags: ["Healthcare", "Web Platform", "UI/UX"],
+  //   altText: "ZentraCare healthcare platform interface showcasing patient care management system"
+  // }
 ];
 
 const Projects = () => {
