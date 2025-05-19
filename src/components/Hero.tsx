@@ -30,8 +30,8 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-accent/80 text-center max-w-2xl mx-auto mb-12"
         >
-          Hi, I'm a designer and developer passionate about creating beautiful, functional experiences. 
-          Specializing in UI/UX, Web3, and interactive art, I bring creative visions to life through code.
+          Hi, I’m a designer and developer passionate about crafting beautiful and intuitive digital experiences. 
+          Specializing in UI/UX, emerging tech, and human-centered design, I bring creative ideas to life through code.
         </motion.p>
         
         <motion.div
