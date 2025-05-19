@@ -37,6 +37,20 @@ const projects = [
     altText: "Lesson Link educational platform displaying teacher-student connection interface"
   },
   {
+    title: "MedSafe Project",
+    description: "Drug interaction awareness initiative offering articles and resources to promote safe medication use and raise awareness.",
+    link: "https://medsafeproject.org",
+    tags: ["Healthcare", "Public Health", "Awareness"],
+    altText: "MedSafe Project article interface displaying drug safety content and AI-powered insights"
+  },
+  {
+    title: "SoloPro",
+    description: "All-in-one client booking and payment platform for solo professionals like mobile mechanics, groomers, tattoo artists, and more.",
+    link: "https://solopro.cc",
+    tags: ["Field service management", "Custom Branding"],
+    altText: "SoloPro platform interface for managing bookings, clients, and payments for solo service providers"
+  },
+  {
     title: "The LZ",
     description: "Free mental health and additional resources for veterans",
     link: "https://thelz.org/",
