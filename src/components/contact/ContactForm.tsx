@@ -1,3 +1,4 @@
+
 import { useForm } from "react-hook-form";
 import { useToast } from "../ui/use-toast";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
@@ -6,6 +7,7 @@ import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -71,7 +73,7 @@ export const ContactForm = ({ onSubmitProp }: { onSubmitProp: (isOpen: boolean) 
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Your name" {...field} />
+                <Input placeholder="Your name" {...field} className="rounded-lg" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -84,7 +86,7 @@ export const ContactForm = ({ onSubmitProp }: { onSubmitProp: (isOpen: boolean) 
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="Your email" {...field} />
+                <Input type="email" placeholder="Your email" {...field} className="rounded-lg" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -97,15 +99,27 @@ export const ContactForm = ({ onSubmitProp }: { onSubmitProp: (isOpen: boolean) 
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="Your message" {...field} />
+                <Textarea placeholder="Your message" {...field} className="rounded-lg min-h-[120px]" />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full bg-gradient-to-r from-[#33C3F0] to-[#0FA0CE]">
-          Send Message
-        </Button>
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          <Button 
+            type="submit" 
+            className="w-full rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 
+            hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] active:shadow-[0_0_10px_rgba(139,92,246,0.3)]
+            transition-all duration-300 ease-out overflow-hidden group"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 opacity-0 
+            group-hover:opacity-100 transition-opacity duration-300 ease-out rounded-full" />
+            <span className="relative z-10">Send Message</span>
+          </Button>
+        </motion.div>
       </form>
     </Form>
   );

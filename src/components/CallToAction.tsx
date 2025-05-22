@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
@@ -40,9 +41,9 @@ const CallToAction = () => {
                 <span className="relative z-10">Contact Me</span>
               </motion.button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-[425px] shadow-xl">
               <DialogHeader>
-                <DialogTitle>Send me a message</DialogTitle>
+                <DialogTitle className="text-xl md:text-2xl font-bold text-accent">Send me a message</DialogTitle>
               </DialogHeader>
               <ContactForm onSubmitProp={setIsOpen} />
             </DialogContent>
