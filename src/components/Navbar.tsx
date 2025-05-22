@@ -79,23 +79,21 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-              {["hero", "projects", "contact"].map((section) => (
-                <button
-                  key={section}
-                  onClick={() => scrollToSection(section)}
-                  className="block w-full text-left px-3 py-2 text-accent/80 
-                  hover:text-accent hover:bg-accent/5 rounded-md 
-                  transition-all duration-300 ease-out"
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </button>
-              ))}
-            </div>
+        <div className={`md:hidden mobile-nav ${isOpen ? 'open' : ''}`}>
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+            {["hero", "projects", "contact"].map((section) => (
+              <button
+                key={section}
+                onClick={() => scrollToSection(section)}
+                className="block w-full text-left px-3 py-2 text-accent/80 
+                hover:text-accent hover:bg-accent/5 rounded-md 
+                transition-all duration-300 ease-out"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+            ))}
           </div>
-        )}
+        </div>
       </div>
       
       <style>
@@ -145,6 +143,21 @@ const Navbar = () => {
         .hamburger-line.open:nth-child(3) {
           transform: translateY(-5px) rotate(-45deg);
           background-color: #1A1F2C;
+        }
+
+        /* Mobile navigation fade animation */
+        .mobile-nav {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: all 250ms ease-out;
+          visibility: hidden;
+        }
+        
+        .mobile-nav.open {
+          max-height: 300px; /* Adjust based on your menu height */
+          opacity: 1;
+          visibility: visible;
         }
         `}
       </style>
