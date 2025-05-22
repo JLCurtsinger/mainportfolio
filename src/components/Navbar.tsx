@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
@@ -67,9 +66,14 @@ const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-accent hover:text-accent/80 transition-colors"
+              className="text-accent hover:text-accent/80 transition-colors p-0"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <div className="hamburger-menu">
+                <span className={`hamburger-line ${isOpen ? 'open' : ''}`}></span>
+                <span className={`hamburger-line ${isOpen ? 'open' : ''}`}></span>
+                <span className={`hamburger-line ${isOpen ? 'open' : ''}`}></span>
+              </div>
             </Button>
           </div>
         </div>
@@ -93,6 +97,55 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      
+      <style jsx>{`
+        .hamburger-menu {
+          position: relative;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+        }
+        
+        .hamburger-line {
+          width: 24px;
+          height: 2px;
+          background-color: #1A1F2C;
+          border-radius: 10px;
+          transition: all 0.3s ease-in-out;
+          position: absolute;
+        }
+        
+        .hamburger-line:nth-child(1) {
+          top: 6px;
+        }
+        
+        .hamburger-line:nth-child(2) {
+          top: 11px;
+          transform-origin: center;
+        }
+        
+        .hamburger-line:nth-child(3) {
+          top: 16px;
+        }
+        
+        .hamburger-line.open:nth-child(1) {
+          transform: translateY(5px) rotate(45deg);
+          background-color: #7E69AB;
+        }
+        
+        .hamburger-line.open:nth-child(2) {
+          opacity: 0;
+          transform: scale(0.2);
+        }
+        
+        .hamburger-line.open:nth-child(3) {
+          transform: translateY(-5px) rotate(-45deg);
+          background-color: #7E69AB;
+        }
+      `}</style>
     </nav>
   );
 };
