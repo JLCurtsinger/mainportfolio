@@ -108,15 +108,14 @@ export const ContactForm = ({ onSubmitProp }: { onSubmitProp: (isOpen: boolean) 
         <motion.div
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
+          className="overflow-hidden rounded-full"
         >
           <Button 
             type="submit" 
-            className="w-full rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 
+            className="w-full rounded-full relative bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 
             hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] active:shadow-[0_0_10px_rgba(139,92,246,0.3)]
-            transition-all duration-300 ease-out overflow-hidden group"
+            transition-all duration-300 ease-out overflow-hidden"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 opacity-0 
-            group-hover:opacity-100 transition-opacity duration-300 ease-out rounded-full" />
             <span className="relative z-10">Send Message</span>
           </Button>
         </motion.div>
