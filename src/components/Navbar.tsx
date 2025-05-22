@@ -66,7 +66,7 @@ const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-accent hover:text-accent/80 transition-colors p-0"
+              className="text-accent hover:bg-transparent focus:bg-transparent active:bg-transparent p-0"
               aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               <div className="hamburger-menu">
@@ -98,7 +98,8 @@ const Navbar = () => {
         )}
       </div>
       
-      <style jsx>{`
+      <style>
+        {`
         .hamburger-menu {
           position: relative;
           width: 24px;
@@ -133,7 +134,7 @@ const Navbar = () => {
         
         .hamburger-line.open:nth-child(1) {
           transform: translateY(5px) rotate(45deg);
-          background-color: #7E69AB;
+          background-color: #1A1F2C;
         }
         
         .hamburger-line.open:nth-child(2) {
@@ -143,9 +144,10 @@ const Navbar = () => {
         
         .hamburger-line.open:nth-child(3) {
           transform: translateY(-5px) rotate(-45deg);
-          background-color: #7E69AB;
+          background-color: #1A1F2C;
         }
-      `}</style>
+        `}
+      </style>
     </nav>
   );
 };
