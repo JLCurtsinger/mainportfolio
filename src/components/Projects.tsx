@@ -16,7 +16,7 @@ const projects = [
     altText: "So Fire Fitness web application displaying workout tracking interface"
   },
   {
-    title: "Auto Author",
+    title: "AutoAuthor.cc",
     description: "AI supercharged high-quality automated content generation",
     link: "https://autoauthor.cc/",
     tags: ["Social Media", "Automation", "AI"],
