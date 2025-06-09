@@ -16,6 +16,13 @@ const projects = [
     altText: "So Fire Fitness web application displaying workout tracking interface"
   },
   {
+    title: "Auto Author",
+    description: "AI supercharged high-quality automated content generation",
+    link: "https://autoauthor.cc/",
+    tags: ["Social Media", "Automation", "AI"],
+    altText: "Supercharge your content with AutoAuthor.cc!"
+  },
+  {
     title: "TalkLikeALocal",
     description: "Learn to say things like the locals do all across the United States",
     link: "https://talklikealocal.org",
