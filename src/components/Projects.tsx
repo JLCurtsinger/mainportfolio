@@ -30,6 +30,13 @@ const projects = [
     altText: "TalkLikeALocal language learning platform showing interactive lesson interface"
   },
   {
+    title: "APIJunction.cc",
+    description: "On-the-fly API integration discovering, and calling APIs from natural language.",
+    link: "https://apijunction.cc",
+    tags: ["Developer Tools", "AI", "APIs"],
+    altText: "APIJunction interface showing automated API discovery and integration from a natural language query"
+  }
+  {
     title: "Xchainj",
     description: "Secure blockchain platform enabling peer-to-peer trading and borrowing with advanced DeFi features",
     link: "https://xchainj.com",
