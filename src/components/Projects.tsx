@@ -35,7 +35,7 @@ const projects = [
     link: "https://apijunction.cc",
     tags: ["Developer Tools", "AI", "APIs"],
     altText: "APIJunction interface showing automated API discovery and integration from a natural language query"
-  }
+  },
   {
     title: "Xchainj",
     description: "Secure blockchain platform enabling peer-to-peer trading and borrowing with advanced DeFi features",
