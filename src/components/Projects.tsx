@@ -31,7 +31,7 @@ const projects = [
   },
   {
     title: "APIJunction.cc",
-    description: "On-the-fly API integration discovering, and calling APIs from natural language.",
+    description: "On-the-fly API integration. Discovering, and calling APIs from natural language.",
     link: "https://apijunction.cc",
     tags: ["Developer Tools", "AI", "APIs"],
     altText: "APIJunction interface showing automated API discovery and integration from a natural language query"
