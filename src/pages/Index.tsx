@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import InteractiveArt from "../components/InteractiveArt";
+import MyWhy from "../components/MyWhy";
 import CallToAction from "../components/CallToAction";
 import Navbar from "../components/Navbar";
 
@@ -16,6 +17,9 @@ const Index = () => {
           <Projects />
         </div>
         <InteractiveArt />
+        <div id="my-why">
+          <MyWhy />
+        </div>
         <div id="contact">
           <CallToAction />
         </div>

@@ -44,7 +44,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {["hero", "projects", "contact"].map((section) => (
+            {["hero", "projects", "my-why", "contact"].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
@@ -55,7 +55,7 @@ const Navbar = () => {
                 after:origin-bottom-right after:transition-transform after:duration-300 
                 hover:after:scale-x-100 hover:after:origin-bottom-left"
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+                {section === "my-why" ? "My Why" : section.charAt(0).toUpperCase() + section.slice(1)}
               </button>
             ))}
           </div>
@@ -81,7 +81,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div className={`md:hidden mobile-nav ${isOpen ? 'open' : ''}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-            {["hero", "projects", "contact"].map((section) => (
+            {["hero", "projects", "my-why", "contact"].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
@@ -89,7 +89,7 @@ const Navbar = () => {
                 hover:text-accent hover:bg-accent/5 rounded-md 
                 transition-all duration-300 ease-out"
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+                {section === "my-why" ? "My Why" : section.charAt(0).toUpperCase() + section.slice(1)}
               </button>
             ))}
           </div>
