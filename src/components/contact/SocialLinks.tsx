@@ -27,7 +27,7 @@ export const SocialLinks = () => {
         aria-label="Fiverr"
         className="p-2 rounded-full bg-accent/5 hover:bg-accent/10 transition-colors"
       >
-        <ExternalLink className="w-6 h-6" />
+        <img src="/fiverr.png" alt="Fiverr" className="w-6 h-6" />
       </a>
       <a
         href="mailto:cjcurtsinger502@aol.com"
