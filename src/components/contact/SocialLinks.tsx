@@ -1,4 +1,4 @@
-import { Github, Mail, Linkedin } from "lucide-react";
+import { Github, Mail, Linkedin, ExternalLink } from "lucide-react";
 
 export const SocialLinks = () => {
   return (
@@ -19,6 +19,15 @@ export const SocialLinks = () => {
         className="p-2 rounded-full bg-accent/5 hover:bg-accent/10 transition-colors"
       >
         <Linkedin className="w-6 h-6" />
+      </a>
+      <a
+        href="http://www.fiverr.com/s/ZmZ5X8a"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Fiverr"
+        className="p-2 rounded-full bg-accent/5 hover:bg-accent/10 transition-colors"
+      >
+        <ExternalLink className="w-6 h-6" />
       </a>
       <a
         href="mailto:cjcurtsinger502@aol.com"
