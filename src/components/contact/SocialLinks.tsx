@@ -12,7 +12,7 @@ export const SocialLinks = () => {
         <Github className="w-6 h-6" />
       </a>
       <a
-        href="https://www.linkedin.com/in/justin-curtsinger-5a06b9345/"
+        href="https://www.linkedin.com/in/justincurtsinger/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
