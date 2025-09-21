@@ -6,63 +6,72 @@ const projects = [
     description: "Next-generation drug and supplement interaction checker combining AI, real-world reports, and verified datasets for unprecedented accuracy and ease of use.",
     link: "https://vitacheck.cc",
     tags: ["Healthcare", "Drug Safety", "AI"],
-    altText: "VitaCheck interaction checker interface displaying risk analysis of multiple substances"
+    altText: "VitaCheck interaction checker interface displaying risk analysis of multiple substances",
+    previewSrc: "/images/projects/vitacheck.jpg"
   },
   {
     title: "So Fire Fitness",
     description: "Modern fitness training and wellness platform designed for personalized workout experiences",
     link: "https://sofirefitness.com",
     tags: ["Fitness", "Health", "Web App"],
-    altText: "So Fire Fitness web application displaying workout tracking interface"
+    altText: "So Fire Fitness web application displaying workout tracking interface",
+    previewSrc: "/images/projects/so-fire-fitness.jpg"
   },
   {
     title: "AutoAuthor.cc",
     description: "AI supercharged high-quality automated content generation",
     link: "https://autoauthor.cc/",
     tags: ["Social Media", "Automation", "AI"],
-    altText: "Supercharge your content with AutoAuthor.cc!"
+    altText: "Supercharge your content with AutoAuthor.cc!",
+    previewSrc: "/images/projects/autoauthor-cc.jpg"
   },
   {
     title: "TalkLikeALocal",
     description: "Learn to say things like the locals do all across the United States",
     link: "https://talklikealocal.org",
     tags: ["Education", "Language", "Community"],
-    altText: "TalkLikeALocal language learning platform showing interactive lesson interface"
+    altText: "TalkLikeALocal language learning platform showing interactive lesson interface",
+    previewSrc: "/images/projects/talklikealocal.jpg"
   },
   {
     title: "APIJunction.cc",
     description: "On-the-fly API integration. Discovering, and calling APIs from natural language.",
     link: "https://apijunction.cc",
     tags: ["Developer Tools", "AI", "APIs"],
-    altText: "APIJunction interface showing automated API discovery and integration from a natural language query"
+    altText: "APIJunction interface showing automated API discovery and integration from a natural language query",
+    previewSrc: "/images/projects/apijunction-cc.jpg"
   },
   {
     title: "Xchainj",
     description: "Secure blockchain platform enabling peer-to-peer trading and borrowing with advanced DeFi features",
     link: "https://xchainj.com",
     tags: ["Blockchain", "Web3", "DeFi"],
-    altText: "Xchainj blockchain trading platform showing decentralized exchange interface"
+    altText: "Xchainj blockchain trading platform showing decentralized exchange interface",
+    previewSrc: "/images/projects/xchainj.jpg"
   },
   {
     title: "Lesson Link",
     description: "Early literacy skill builder for 3 year olds with AI powered personalized learning paths",
     link: "https://lessonlink.org",
     tags: ["Education", "AI-powered", "EdTech"],
-    altText: "Lesson Link educational platform displaying teacher-student connection interface"
+    altText: "Lesson Link educational platform displaying teacher-student connection interface",
+    previewSrc: "/images/projects/lesson-link.jpg"
   },
   {
     title: "MedSafe Project",
     description: "Drug interaction awareness initiative offering articles and resources to promote safe medication use and raise awareness.",
     link: "https://medsafeproject.org",
     tags: ["Healthcare", "Public Health", "Awareness"],
-    altText: "MedSafe Project article interface displaying drug safety content and AI-powered insights"
+    altText: "MedSafe Project article interface displaying drug safety content and AI-powered insights",
+    previewSrc: "/images/projects/medsafe-project.jpg"
   },
   {
     title: "SoloPro",
     description: "All-in-one client booking and payment platform for solo professionals like mobile mechanics, groomers, tattoo artists, and more.",
     link: "https://solopro.cc",
     tags: ["Field service management", "Custom Branding"],
-    altText: "SoloPro platform interface for managing bookings, clients, and payments for solo service providers"
+    altText: "SoloPro platform interface for managing bookings, clients, and payments for solo service providers",
+    previewSrc: "/images/projects/solopro.jpg"
   }
   // {
   //   title: "The LZ",
@@ -119,12 +128,28 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <button
-                  aria-label={`Visit ${project.title} project`}
-                  className="inline-block px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors"
-                >
-                  Visit Project
-                </button>
+                {/* Footer row: button + tiny preview */}
+                <div className="mt-4 flex flex-wrap items-end justify-between gap-3 md:flex-nowrap">
+                  <button
+                    aria-label={`Visit ${project.title} project`}
+                    className="inline-block px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors"
+                  >
+                    Visit Project
+                  </button>
+
+                  {/* Mini preview (only if provided) */}
+                  {project.previewSrc ? (
+                    <div className="shrink-0 w-28 md:w-32 aspect-[16/10] rounded-lg overflow-hidden ring-1 ring-black/5">
+                      <img
+                        src={project.previewSrc}
+                        alt=""
+                        loading="lazy"
+                        aria-hidden="true"
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                  ) : null}
+                </div>
               </div>
             </motion.article>
           ))}
