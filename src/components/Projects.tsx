@@ -7,7 +7,7 @@ const projects = [
     link: "https://vitacheck.cc",
     tags: ["Healthcare", "Drug Safety", "AI"],
     altText: "VitaCheck interaction checker interface displaying risk analysis of multiple substances",
-    previewSrc: "/images/projects/vitacheck.jpg"
+    previewSrc: "images/projects/vitacheck.webp"
   },
   {
     title: "So Fire Fitness",
@@ -15,7 +15,7 @@ const projects = [
     link: "https://sofirefitness.com",
     tags: ["Fitness", "Health", "Web App"],
     altText: "So Fire Fitness web application displaying workout tracking interface",
-    previewSrc: "/images/projects/so-fire-fitness.jpg"
+    previewSrc: "images/projects/so-fire-fitness.webp"
   },
   {
     title: "AutoAuthor.cc",
@@ -23,7 +23,7 @@ const projects = [
     link: "https://autoauthor.cc/",
     tags: ["Social Media", "Automation", "AI"],
     altText: "Supercharge your content with AutoAuthor.cc!",
-    previewSrc: "/images/projects/autoauthor-cc.jpg"
+    previewSrc: "images/projects/autoauthor-cc.webp"
   },
   {
     title: "TalkLikeALocal",
@@ -31,7 +31,7 @@ const projects = [
     link: "https://talklikealocal.org",
     tags: ["Education", "Language", "Community"],
     altText: "TalkLikeALocal language learning platform showing interactive lesson interface",
-    previewSrc: "/images/projects/talklikealocal.jpg"
+    previewSrc: "images/projects/talklikealocal.webp"
   },
   {
     title: "APIJunction.cc",
@@ -39,7 +39,7 @@ const projects = [
     link: "https://apijunction.cc",
     tags: ["Developer Tools", "AI", "APIs"],
     altText: "APIJunction interface showing automated API discovery and integration from a natural language query",
-    previewSrc: "/images/projects/apijunction-cc.jpg"
+    previewSrc: "images/projects/apijunction-cc.webp"
   },
   {
     title: "Xchainj",
@@ -47,7 +47,7 @@ const projects = [
     link: "https://xchainj.com",
     tags: ["Blockchain", "Web3", "DeFi"],
     altText: "Xchainj blockchain trading platform showing decentralized exchange interface",
-    previewSrc: "/images/projects/xchainj.jpg"
+    previewSrc: "images/projects/xchainj.webp"
   },
   {
     title: "Lesson Link",
@@ -55,7 +55,7 @@ const projects = [
     link: "https://lessonlink.org",
     tags: ["Education", "AI-powered", "EdTech"],
     altText: "Lesson Link educational platform displaying teacher-student connection interface",
-    previewSrc: "/images/projects/lesson-link.jpg"
+    previewSrc: "images/projects/lesson-link.webp"
   },
   {
     title: "MedSafe Project",
@@ -63,7 +63,7 @@ const projects = [
     link: "https://medsafeproject.org",
     tags: ["Healthcare", "Public Health", "Awareness"],
     altText: "MedSafe Project article interface displaying drug safety content and AI-powered insights",
-    previewSrc: "/images/projects/medsafe-project.jpg"
+    previewSrc: "images/projects/medsafe-project.webp"
   },
   {
     title: "SoloPro",
@@ -71,7 +71,7 @@ const projects = [
     link: "https://solopro.cc",
     tags: ["Field service management", "Custom Branding"],
     altText: "SoloPro platform interface for managing bookings, clients, and payments for solo service providers",
-    previewSrc: "/images/projects/solopro.jpg"
+    previewSrc: "images/projects/solopro.webp"
   }
   // {
   //   title: "The LZ",
@@ -142,19 +142,16 @@ const Projects = () => {
                   {/* Mini preview (only if provided) */}
                   {project.previewSrc ? (
                     <div className="shrink-0 w-28 md:w-32 rounded-lg overflow-hidden ring-1 ring-black/5">
-                      <picture>
-                        <source srcSet={project.previewSrc.replace(/\.jpg$/i, '.webp')} type="image/webp" />
-                        <img
-                          src={project.previewSrc}
-                          alt=""
-                          width={256}
-                          height={160}
-                          loading="lazy"
-                          decoding="async"
-                          aria-hidden="true"
-                          className="h-auto w-full object-cover aspect-[16/10]"
-                        />
-                      </picture>
+                      <img
+                        src={project.previewSrc}
+                        alt=""
+                        width={256}
+                        height={160}
+                        loading="lazy"
+                        decoding="async"
+                        aria-hidden="true"
+                        className="h-auto w-full object-cover aspect-[16/10]"
+                      />
                     </div>
                   ) : null}
                 </div>
