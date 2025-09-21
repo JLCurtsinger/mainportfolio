@@ -117,13 +117,13 @@ const Projects = () => {
             >
               <div className="flex h-full flex-col p-6">
                 <div className="flex-1 flex flex-col gap-3">
-                  <h3 className="text-xl font-bold mb-2 text-accent">{project.title}</h3>
-                  <p className="mb-4 text-gray-600">{project.description}</p>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3 text-accent">{project.title}</h3>
+                  <p className="text-base md:text-lg mb-4 text-gray-700">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-base"
                       >
                         {tag}
                       </span>
