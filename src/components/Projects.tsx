@@ -63,14 +63,14 @@ const projects = [
     link: "https://solopro.cc",
     tags: ["Field service management", "Custom Branding"],
     altText: "SoloPro platform interface for managing bookings, clients, and payments for solo service providers"
-  },
-  {
-    title: "The LZ",
-    description: "Free mental health and additional resources for veterans",
-    link: "https://thelz.org/",
-    tags: ["Military", "Web App", "Mental Health"],
-    altText: "The LZ is a site that provides free resources for veterans centered around mental health."
   }
+  // {
+  //   title: "The LZ",
+  //   description: "Free mental health and additional resources for veterans",
+  //   link: "https://thelz.org/",
+  //   tags: ["Military", "Web App", "Mental Health"],
+  //   altText: "The LZ is a site that provides free resources for veterans centered around mental health."
+  // }
   // {
   //   title: "Roamari",
   //   description: "Intuitive travel planning and exploration platform with personalized recommendations",
