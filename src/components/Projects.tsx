@@ -104,7 +104,7 @@ const Projects = () => {
           Featured Projects
         </h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
           {projects.map((project, index) => (
             <motion.article
               key={index}
@@ -112,24 +112,26 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => window.open(project.link, '_blank')}
-              className="group relative overflow-hidden rounded-lg shadow-lg bg-white border border-gray-200 
+              className="h-full group relative overflow-hidden rounded-lg shadow-lg bg-white border border-gray-200 
               hover:shadow-xl transition-shadow duration-300 cursor-pointer transform hover:-translate-y-1"
             >
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-accent">{project.title}</h3>
-                <p className="mb-4 text-gray-600">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              <div className="flex h-full flex-col p-6">
+                <div className="flex-1 flex flex-col gap-3">
+                  <h3 className="text-xl font-bold mb-2 text-accent">{project.title}</h3>
+                  <p className="mb-4 text-gray-600">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 {/* Footer row: button + tiny preview */}
-                <div className="mt-4 flex flex-wrap items-end justify-between gap-3 md:flex-nowrap">
+                <div className="mt-auto flex flex-wrap items-center justify-between gap-3 md:flex-nowrap pb-5">
                   <button
                     aria-label={`Visit ${project.title} project`}
                     className="inline-block px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors"
@@ -139,14 +141,20 @@ const Projects = () => {
 
                   {/* Mini preview (only if provided) */}
                   {project.previewSrc ? (
-                    <div className="shrink-0 w-28 md:w-32 aspect-[16/10] rounded-lg overflow-hidden ring-1 ring-black/5">
-                      <img
-                        src={project.previewSrc}
-                        alt=""
-                        loading="lazy"
-                        aria-hidden="true"
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                      />
+                    <div className="shrink-0 w-28 md:w-32 rounded-lg overflow-hidden ring-1 ring-black/5">
+                      <picture>
+                        <source srcSet={project.previewSrc.replace(/\.jpg$/i, '.webp')} type="image/webp" />
+                        <img
+                          src={project.previewSrc}
+                          alt=""
+                          width={256}
+                          height={160}
+                          loading="lazy"
+                          decoding="async"
+                          aria-hidden="true"
+                          className="h-auto w-full object-cover aspect-[16/10]"
+                        />
+                      </picture>
                     </div>
                   ) : null}
                 </div>
