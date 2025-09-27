@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Vitacheck",
+    title: "Vitacheck.cc",
     description: "Next-generation drug and supplement interaction checker combining AI, real-world reports, and verified datasets for unprecedented accuracy and ease of use.",
     link: "https://vitacheck.cc",
     tags: ["Healthcare", "Drug Safety", "AI"],
@@ -10,7 +10,7 @@ const projects = [
     previewSrc: "images/projects/vitacheck.webp"
   },
   {
-    title: "So Fire Fitness",
+    title: "SoFireFitness.com",
     description: "Modern fitness training and wellness platform designed for personalized workout experiences",
     link: "https://sofirefitness.com",
     tags: ["Fitness", "Health", "Web App"],
@@ -26,7 +26,7 @@ const projects = [
     previewSrc: "images/projects/autoauthor-cc.webp"
   },
   {
-    title: "TalkLikeALocal",
+    title: "TalkLikeALocal.org",
     description: "Learn to say things like the locals do all across the United States",
     link: "https://talklikealocal.org",
     tags: ["Education", "Language", "Community"],
@@ -42,7 +42,7 @@ const projects = [
     previewSrc: "images/projects/apijunction-cc.webp"
   },
   {
-    title: "Xchainj",
+    title: "Xchainj.com",
     description: "Secure blockchain platform enabling peer-to-peer trading and borrowing with advanced DeFi features",
     link: "https://xchainj.com",
     tags: ["Blockchain", "Web3", "DeFi"],
@@ -50,7 +50,7 @@ const projects = [
     previewSrc: "images/projects/xchainj.webp"
   },
   {
-    title: "Lesson Link",
+    title: "LessonLink.org",
     description: "Early literacy skill builder for 3 year olds with AI powered personalized learning paths",
     link: "https://lessonlink.org",
     tags: ["Education", "AI-powered", "EdTech"],
@@ -58,7 +58,7 @@ const projects = [
     previewSrc: "images/projects/lesson-link.webp"
   },
   {
-    title: "MedSafe Project",
+    title: "MedSafeProject.org",
     description: "Drug interaction awareness initiative offering articles and resources to promote safe medication use and raise awareness.",
     link: "https://medsafeproject.org",
     tags: ["Healthcare", "Public Health", "Awareness"],
@@ -66,7 +66,7 @@ const projects = [
     previewSrc: "images/projects/medsafe-project.webp"
   },
   {
-    title: "SoloPro",
+    title: "SoloPro.cc",
     description: "All-in-one client booking and payment platform for solo professionals like mobile mechanics, groomers, tattoo artists, and more.",
     link: "https://solopro.cc",
     tags: ["Field service management", "Custom Branding"],
