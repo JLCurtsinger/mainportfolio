@@ -15,7 +15,7 @@ const CallToAction = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-accent mb-8"
+          className="text-4xl sm:text-5xl md:text-6xl text-gray-800 font-semibold tracking-normal text-accent mb-8"
         >
           Let's Create Something Amazing
         </motion.h2>
