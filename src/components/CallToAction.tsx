@@ -30,9 +30,8 @@ const CallToAction = () => {
             <DialogTrigger asChild>
               <motion.button 
                 data-contact-trigger
-                className="inline-flex items-center relative px-6 py-3 text-lg bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 text-white rounded-full 
-                hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] active:shadow-[0_0_10px_rgba(139,92,246,0.3)]
-                transition-all duration-300 ease-out overflow-hidden"
+                className="inline-flex items-center px-6 py-3 text-lg border-2 border-accent text-accent rounded-full 
+hover:bg-accent hover:text-white transition-all duration-300 ease-out"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
