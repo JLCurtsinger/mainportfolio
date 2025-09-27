@@ -32,7 +32,7 @@ const Navbar = () => {
               e.preventDefault();
               scrollToSection("hero");
             }}
-            className="text-xl font-semibold text-accent hover:text-accent/80 
+            className="text-lg md:text-xl font-semibold text-accent hover:text-accent/80 
             transition-all duration-300 ease-out
             relative after:content-[''] after:absolute after:w-full after:scale-x-0 
             after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 
@@ -48,7 +48,7 @@ const Navbar = () => {
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className="text-accent/80 hover:text-accent 
+                className="text-base md:text-lg text-accent/80 hover:text-accent 
                 transition-all duration-300 ease-out
                 relative after:content-[''] after:absolute after:w-full after:scale-x-0 
                 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 

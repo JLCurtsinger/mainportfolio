@@ -2,9 +2,9 @@ const MyWhy = () => {
   return (
     <section className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-8 text-center">My Why</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent mb-8 text-center">My Why</h2>
 
-        <p className="text-lg leading-relaxed text-neutral-700 mb-12 text-center">
+        <p className="mt-4 text-lg md:text-xl leading-relaxed text-gray-700 mb-12 text-center">
           What draws me to building is the sense that technology, especially emerging tools, can open up new ways of connecting things that didn't quite fit before. Each project often begins by stepping back and asking, What might change if I looked at this from a different angle? I'm interested in the spaces where something small and well-considered can make a bigger impact than expected. Where gaps become bridges, and overlooked problems become opportunities to build something better for everyone.
         </p>
 
