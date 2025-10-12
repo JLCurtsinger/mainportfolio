@@ -30,7 +30,7 @@ const Index = () => {
               width="260"
               height="260"
             />
-            <p className="mt-3 text-sm text-gray-600 italic">-Justin Curtsinger</p>
+            <p className="mt-3 text-sm text-gray-600 italic">- Justin Curtsinger</p>
           </div>
         </section>
         <div id="contact">
