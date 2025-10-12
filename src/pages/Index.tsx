@@ -21,7 +21,7 @@ const Index = () => {
           <MyWhy />
         </div>
         <section id="profile-headshot" aria-label="Portrait" className="py-12 bg-white">
-          <div className="flex justify-center items-center">
+          <div className="flex flex-col justify-center items-center">
             <img
               src="/Headshot1.png"
               alt="Justin Curtsinger headshot"
@@ -30,6 +30,7 @@ const Index = () => {
               width="260"
               height="260"
             />
+            <p className="mt-3 text-sm text-gray-600 italic">-Justin Curtsinger</p>
           </div>
         </section>
         <div id="contact">
