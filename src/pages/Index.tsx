@@ -20,7 +20,7 @@ const Index = () => {
         <div id="my-why">
           <MyWhy />
         </div>
-        <section id="profile-headshot" aria-label="Portrait" className="py-12 bg-white">
+        <section id="profile-headshot" aria-label="Portrait" className="pt-12 pb-9 bg-white">
           <div className="flex flex-col justify-center items-center">
             <img
               src="/Headshot1.png"
