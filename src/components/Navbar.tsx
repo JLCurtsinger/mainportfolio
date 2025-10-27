@@ -1,23 +1,49 @@
 
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      
-      // If it's the contact section, also open the modal
-      if (sectionId === 'contact') {
-        const dialogTrigger = document.querySelector('[data-contact-trigger]') as HTMLButtonElement;
-        if (dialogTrigger && !document.querySelector('[role="dialog"]')) {
-          dialogTrigger.click();
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          
+          if (sectionId === 'contact') {
+            setTimeout(() => {
+              const dialogTrigger = document.querySelector('[data-contact-trigger]') as HTMLButtonElement;
+              if (dialogTrigger && !document.querySelector('[role="dialog"]')) {
+                dialogTrigger.click();
+              }
+            }, 500);
+          }
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        
+        if (sectionId === 'contact') {
+          const dialogTrigger = document.querySelector('[data-contact-trigger]') as HTMLButtonElement;
+          if (dialogTrigger && !document.querySelector('[role="dialog"]')) {
+            dialogTrigger.click();
+          }
         }
       }
     }
+    setIsOpen(false);
+  };
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
     setIsOpen(false);
   };
 
@@ -44,20 +70,61 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {["hero", "projects", "my-why", "contact"].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className="text-base md:text-lg text-accent/80 hover:text-accent 
-                transition-all duration-300 ease-out
-                relative after:content-[''] after:absolute after:w-full after:scale-x-0 
-                after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 
-                after:origin-bottom-right after:transition-transform after:duration-300 
-                hover:after:scale-x-100 hover:after:origin-bottom-left"
-              >
-                {section === "my-why" ? "My Why" : section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
-            ))}
+            <button
+              onClick={() => scrollToSection("hero")}
+              className="text-base md:text-lg text-accent/80 hover:text-accent 
+              transition-all duration-300 ease-out
+              relative after:content-[''] after:absolute after:w-full after:scale-x-0 
+              after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 
+              after:origin-bottom-right after:transition-transform after:duration-300 
+              hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              Hero
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="text-base md:text-lg text-accent/80 hover:text-accent 
+              transition-all duration-300 ease-out
+              relative after:content-[''] after:absolute after:w-full after:scale-x-0 
+              after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 
+              after:origin-bottom-right after:transition-transform after:duration-300 
+              hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => handleNavigation("/work-with-me")}
+              className="text-base md:text-lg text-accent/80 hover:text-accent 
+              transition-all duration-300 ease-out
+              relative after:content-[''] after:absolute after:w-full after:scale-x-0 
+              after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 
+              after:origin-bottom-right after:transition-transform after:duration-300 
+              hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              Work With Me
+            </button>
+            <button
+              onClick={() => scrollToSection("my-why")}
+              className="text-base md:text-lg text-accent/80 hover:text-accent 
+              transition-all duration-300 ease-out
+              relative after:content-[''] after:absolute after:w-full after:scale-x-0 
+              after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 
+              after:origin-bottom-right after:transition-transform after:duration-300 
+              hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              My Why
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-base md:text-lg text-accent/80 hover:text-accent 
+              transition-all duration-300 ease-out
+              relative after:content-[''] after:absolute after:w-full after:scale-x-0 
+              after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 
+              after:origin-bottom-right after:transition-transform after:duration-300 
+              hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              Contact
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -81,17 +148,46 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div className={`md:hidden mobile-nav ${isOpen ? 'open' : ''}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-            {["hero", "projects", "my-why", "contact"].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className="block w-full text-left px-3 py-2 text-accent/80 
-                hover:text-accent hover:bg-accent/5 rounded-md 
-                transition-all duration-300 ease-out"
-              >
-                {section === "my-why" ? "My Why" : section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
-            ))}
+            <button
+              onClick={() => scrollToSection("hero")}
+              className="block w-full text-left px-3 py-2 text-accent/80 
+              hover:text-accent hover:bg-accent/5 rounded-md 
+              transition-all duration-300 ease-out"
+            >
+              Hero
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="block w-full text-left px-3 py-2 text-accent/80 
+              hover:text-accent hover:bg-accent/5 rounded-md 
+              transition-all duration-300 ease-out"
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => handleNavigation("/work-with-me")}
+              className="block w-full text-left px-3 py-2 text-accent/80 
+              hover:text-accent hover:bg-accent/5 rounded-md 
+              transition-all duration-300 ease-out"
+            >
+              Work With Me
+            </button>
+            <button
+              onClick={() => scrollToSection("my-why")}
+              className="block w-full text-left px-3 py-2 text-accent/80 
+              hover:text-accent hover:bg-accent/5 rounded-md 
+              transition-all duration-300 ease-out"
+            >
+              My Why
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="block w-full text-left px-3 py-2 text-accent/80 
+              hover:text-accent hover:bg-accent/5 rounded-md 
+              transition-all duration-300 ease-out"
+            >
+              Contact
+            </button>
           </div>
         </div>
       </div>
@@ -155,7 +251,7 @@ const Navbar = () => {
         }
         
         .mobile-nav.open {
-          max-height: 300px; /* Adjust based on your menu height */
+          max-height: 400px; /* Adjusted for additional menu item */
           opacity: 1;
           visibility: visible;
         }
