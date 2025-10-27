@@ -64,7 +64,7 @@ const WorkWithMe = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg sm:text-xl text-accent/80 text-center leading-relaxed"
             >
-              I bridge design and development to create intuitive, scalable digital experiences. My background spans full-stack web development, UX/UI design, and product strategy — often in fast-moving environments where ideas need to evolve quickly into something real. I focus on simplicity, usability, and aligning technology with human goals.
+              I bridge design and development to create intuitive, scalable digital experiences. My background spans full-stack web development, UX/UI design, and product strategy, often in fast-moving environments where ideas need to evolve quickly into something real. I focus on simplicity, usability, and aligning technology with human goals.
             </motion.p>
           </div>
         </section>
@@ -90,7 +90,7 @@ const WorkWithMe = () => {
               >
                 <h3 className="text-2xl font-semibold text-accent mb-4">Front-End Development</h3>
                 <p className="text-lg text-accent/80 leading-relaxed">
-                  Crafting clean, responsive interfaces with React, Next.js, and Tailwind — always with a focus on usability and performance.
+                  Crafting clean, responsive interfaces with React, Next.js, and Tailwind, always with a focus on usability and performance.
                 </p>
               </motion.div>
 
@@ -152,7 +152,7 @@ const WorkWithMe = () => {
               className="text-lg sm:text-xl text-accent/80 text-center leading-relaxed mb-12"
             >
               <p className="mb-6">
-                I'm based in Arizona and open to remote or hybrid work — especially collaborations in San Diego or fully remote teams.
+                I'm based near Phoenix, Arizona and open to remote or hybrid work, especially collaborations in the Phoenix & San Diego MSA's and with fully remote teams.
                 I enjoy working with early-stage startups, small creative teams, and founders who value intentional design and long-term thinking.
               </p>
               <p>
@@ -187,10 +187,10 @@ const WorkWithMe = () => {
                   <Linkedin className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://wellfound.com"
+                  href="https://profile.indeed.com/p/justinc-7xlqdf3"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Wellfound"
+                  aria-label="Indeed"
                   className="p-2 rounded-full bg-accent/5 hover:bg-accent/10 transition-colors"
                 >
                   <Briefcase className="w-6 h-6" />
@@ -210,7 +210,7 @@ const WorkWithMe = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-center text-accent/70 italic mt-16 text-lg"
             >
-              I build to connect ideas — and people — through technology.<br />
+              I build to connect ideas and people through technology.<br />
               If that resonates, let's start a conversation.
             </motion.p>
           </div>
