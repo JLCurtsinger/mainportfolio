@@ -10,28 +10,12 @@ const projects = [
     previewSrc: "images/projects/vitacheck.webp"
   },
   {
-    title: "SoFireFitness.com",
-    description: "Modern fitness training and wellness platform designed for personalized workout experiences",
-    link: "https://sofirefitness.com",
-    tags: ["Fitness", "Health", "Web App"],
-    altText: "So Fire Fitness web application displaying workout tracking interface",
-    previewSrc: "images/projects/so-fire-fitness.webp"
-  },
-  {
     title: "AutoAuthor.cc",
     description: "AI supercharged high-quality automated content generation",
     link: "https://autoauthor.cc/",
     tags: ["Social Media", "Automation", "AI"],
     altText: "Supercharge your content with AutoAuthor.cc!",
     previewSrc: "images/projects/autoauthor-cc.webp"
-  },
-  {
-    title: "TalkLikeALocal.org",
-    description: "Learn to say things like the locals do all across the United States",
-    link: "https://talklikealocal.org",
-    tags: ["Education", "Language", "Community"],
-    altText: "TalkLikeALocal language learning platform showing interactive lesson interface",
-    previewSrc: "images/projects/talklikealocal.webp"
   },
   {
     title: "APIJunction.cc",
@@ -42,12 +26,32 @@ const projects = [
     previewSrc: "images/projects/apijunction-cc.webp"
   },
   {
-    title: "Xchainj.com",
-    description: "Secure blockchain platform enabling peer-to-peer trading and borrowing with advanced DeFi features",
-    link: "https://xchainj.com",
-    tags: ["Blockchain", "Web3", "DeFi"],
-    altText: "Xchainj blockchain trading platform showing decentralized exchange interface",
-    previewSrc: "images/projects/xchainj.webp"
+    title: "TalkLikeALocal.org",
+    description: "Learn to say things like the locals do all across the United States",
+    link: "https://talklikealocal.org",
+    tags: ["Education", "Language", "Community"],
+    altText: "TalkLikeALocal language learning platform showing interactive lesson interface",
+    previewSrc: "images/projects/talklikealocal.webp"
+  },
+  {
+    title: "PlantsOfTheSonoranDesert.com",
+    description:
+      "Educational field guide to Sonoran Desert plants featuring original photography, clear identification details, and an expanding collection documenting the region’s unique flora.",
+    link: "https://plantsofthesonorandesert.com",
+    tags: ["Education", "Botany", "Field Guide"],
+    altText:
+      "Plants of the Sonoran Desert field guide page showing a plant profile with photography, details, and a gallery",
+    previewSrc: "images/projects/plants-of-the-sonoran-desert.webp"
+  },
+  {
+    title: "Prompt41.cc",
+    description:
+      "3D in-browser survival-horror game rendered in real time, built under a tight timeline as a scoped prototype exploring immersive gameplay and the limits of modern web technology.",
+    link: "https://prompt41.cc",
+    tags: ["ThreeJS", "Browser-Based", "Rapid Prototyping"],
+    altText:
+      "Prompt41 3D survival-horror web game showing an in-game scene with atmospheric lighting and HUD elements",
+    previewSrc: "images/projects/prompt41.webp"
   },
   {
     title: "LessonLink.org",
@@ -66,12 +70,28 @@ const projects = [
     previewSrc: "images/projects/medsafe-project.webp"
   },
   {
+    title: "SoFireFitness.com",
+    description: "Modern fitness training and wellness platform designed for personalized workout experiences",
+    link: "https://sofirefitness.com",
+    tags: ["Fitness", "Health", "Personal Training"],
+    altText: "So Fire Fitness web application displaying workout tracking interface",
+    previewSrc: "images/projects/so-fire-fitness.webp"
+  },
+  {
     title: "SoloPro.cc",
     description: "All-in-one client booking and payment platform for solo professionals like mobile mechanics, groomers, tattoo artists, and more.",
     link: "https://solopro.cc",
     tags: ["Field service management", "Custom Branding"],
     altText: "SoloPro platform interface for managing bookings, clients, and payments for solo service providers",
     previewSrc: "images/projects/solopro.webp"
+  },
+  {
+    title: "Xchainj.com",
+    description: "Secure blockchain platform enabling peer-to-peer trading and borrowing with advanced DeFi features",
+    link: "https://xchainj.com",
+    tags: ["Blockchain", "Web3", "DeFi"],
+    altText: "Xchainj blockchain trading platform showing decentralized exchange interface",
+    previewSrc: "images/projects/xchainj.webp"
   }
   // {
   //   title: "The LZ",
