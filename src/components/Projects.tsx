@@ -136,7 +136,7 @@ const Projects = () => {
               hover:shadow-xl transition-shadow duration-300 cursor-pointer transform hover:-translate-y-1"
             >
               <div className="flex h-full flex-col p-6">
-                <div className="flex-1 flex flex-col gap-3">
+                <div className="flex-1 flex flex-col gap-3 min-w-0">
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 text-accent">{project.title}</h3>
                   <p className="text-base sm:text-lg lg:text-xl mb-4 text-gray-700">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
