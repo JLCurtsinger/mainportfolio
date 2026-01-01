@@ -7,7 +7,7 @@ import { slugify } from "../lib/utils";
 
 const personalProjects = [
   {
-    title: "DIY Electric Skateboard )",
+    title: "DIY Electric Skateboard",
     description: "Built a custom electric skateboard from scratch using a VESC controller, brushless motor, and custom battery pack. Learned about motor control, battery management systems, and mechanical design.",
   },
   {
