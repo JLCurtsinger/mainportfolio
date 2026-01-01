@@ -104,6 +104,17 @@ const Navbar = () => {
               Work With Me
             </button>
             <button
+              onClick={() => handleNavigation("/personal-projects")}
+              className="text-base md:text-lg text-accent/80 hover:text-accent 
+              transition-all duration-300 ease-out
+              relative after:content-[''] after:absolute after:w-full after:scale-x-0 
+              after:h-0.5 after:bottom-0 after:left-0 after:bg-accent/60 
+              after:origin-bottom-right after:transition-transform after:duration-300 
+              hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              Personal Projects
+            </button>
+            <button
               onClick={() => scrollToSection("my-why")}
               className="text-base md:text-lg text-accent/80 hover:text-accent 
               transition-all duration-300 ease-out
@@ -171,6 +182,14 @@ const Navbar = () => {
               transition-all duration-300 ease-out"
             >
               Work With Me
+            </button>
+            <button
+              onClick={() => handleNavigation("/personal-projects")}
+              className="block w-full text-left px-3 py-2 text-accent/80 
+              hover:text-accent hover:bg-accent/5 rounded-md 
+              transition-all duration-300 ease-out"
+            >
+              Personal Projects
             </button>
             <button
               onClick={() => scrollToSection("my-why")}
