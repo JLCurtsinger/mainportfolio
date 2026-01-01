@@ -104,10 +104,6 @@ const PersonalProjectDetail = () => {
                     <p className="text-base sm:text-lg leading-relaxed">
                       I built a custom electric skateboard from scratch, including the battery pack, enclosure, drivetrain setup, and controller tuning. The goal was a board that felt comfortable over rough pavement, had strong power delivery across the charge range, and stayed reliable under real riding.
                     </p>
-                    <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/book-cover.webp"
-                      alt="DIY Lithium Batteries book cover"
-                    />
                   </section>
 
                   <section className="space-y-6">
@@ -116,8 +112,8 @@ const PersonalProjectDetail = () => {
                       The battery was the biggest learning curve. I used the book "DIY Lithium Batteries" by Micah Toll as my primary guide, and leaned heavily on his battery-building videos while I worked. I treated battery safety as a first-class requirement, not an afterthought, because mistakes here fail fast.
                     </p>
                     <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/supplies-and-spot-welder.webp"
-                      alt="Spot welder and supplies laid out on table"
+                      src="/images/personal-projects/diy-electric-skateboard/book-cover.webp"
+                      alt="DIY Lithium Batteries book cover"
                     />
                   </section>
 
@@ -126,6 +122,10 @@ const PersonalProjectDetail = () => {
                     <p className="text-base sm:text-lg leading-relaxed">
                       Most of the electric-skateboard-specific parts came from DIYElectricSkateboard.com. I bought Samsung 30Q 18650 cells from IMRBatteries.com, and filled in the rest with tools, wiring, consumables, and hardware from Amazon and eBay. This build was a mix of specialty e-skate components and normal "make it work" sourcing.
                     </p>
+                    <ProjectImage 
+                      src="/images/personal-projects/diy-electric-skateboard/supplies-and-spot-welder.webp"
+                      alt="Spot welder and supplies laid out on table"
+                    />
                   </section>
 
                   <section className="space-y-6">
@@ -136,10 +136,6 @@ const PersonalProjectDetail = () => {
                     <p className="text-base sm:text-lg leading-relaxed">
                       To support flex, I built the enclosure in a scale-like segmented form, so each section could move slightly relative to the next. That approach also made the enclosure easier to print on an Ender 3 and easier to iterate on without reprinting a single massive part.
                     </p>
-                    <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/enclosure-on-board.webp"
-                      alt="Enclosure mounted on the board"
-                    />
                   </section>
 
                   <section className="space-y-6">
@@ -147,6 +143,10 @@ const PersonalProjectDetail = () => {
                     <p className="text-base sm:text-lg leading-relaxed">
                       I built the pack as a 12S4P configuration using Samsung 30Q 18650 cells. Instead of one rigid block, I segmented the battery into smaller groups so it could flex with the deck. I also 3D printed cell holders to keep each group aligned and consistent during assembly.
                     </p>
+                    <ProjectImage 
+                      src="/images/personal-projects/diy-electric-skateboard/battery-packs.webp"
+                      alt="Workbench showing pack sections, BMS diagrams, and tools"
+                    />
                     <p className="text-base sm:text-lg leading-relaxed">
                       This segmentation affected wiring. To keep the pack flexible, I could not rely on continuous nickel strip runs everywhere. I had to use wire bridging between sections, which is why the internal layout looks the way it does.
                     </p>
@@ -164,10 +164,6 @@ const PersonalProjectDetail = () => {
                     <p className="text-base sm:text-lg leading-relaxed">
                       This was also where the build stopped feeling like "electronics" and started feeling like systems engineering. Every decision affected heat, clearance, strain relief, serviceability, and failure modes.
                     </p>
-                    <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/battery-packs.webp"
-                      alt="Workbench showing pack sections, BMS diagrams, and tools"
-                    />
                   </section>
 
                   <section className="space-y-6">
@@ -175,17 +171,21 @@ const PersonalProjectDetail = () => {
                     <p className="text-base sm:text-lg leading-relaxed">
                       To mount the enclosure cleanly, I drilled into the deck and installed threaded inserts (metal threaded sleeves) so the enclosure could bolt in securely. This avoided relying on wood screws directly into the deck, and it made removal and maintenance realistic.
                     </p>
+                    <ProjectImage 
+                      src="/images/personal-projects/diy-electric-skateboard/enclosure-on-board.webp"
+                      alt="Enclosure mounted on the board"
+                    />
                   </section>
 
                   <section className="space-y-6">
                     <h2 className="text-2xl sm:text-3xl font-semibold text-accent mb-4 mt-12">ESC and tuning: VESC setup and gearing</h2>
-                    <p className="text-base sm:text-lg leading-relaxed">
-                      After the battery was complete, I tuned the VESC controller and iterated on settings over time. I also played with gearing ratios to dial in acceleration, efficiency, and ride feel.
-                    </p>
                     <ProjectImage 
                       src="/images/personal-projects/diy-electric-skateboard/vesc-wiring.webp"
                       alt="Close-up of VESC wiring and ESC wiring on board"
                     />
+                    <p className="text-base sm:text-lg leading-relaxed">
+                      After the battery was complete, I tuned the VESC controller and iterated on settings over time. I also played with gearing ratios to dial in acceleration, efficiency, and ride feel.
+                    </p>
                   </section>
 
                   <section className="space-y-6">
