@@ -113,7 +113,7 @@ const PersonalProjectDetail = () => {
                   <section className="space-y-6">
                     <h2 className="text-2xl sm:text-3xl font-semibold text-accent mb-4 mt-12">Learning the battery fundamentals</h2>
                     <p className="text-base sm:text-lg leading-relaxed">
-                      The battery was the biggest learning curve. I used the book "DIY Lithium Batteries" by Micah Toll as my primary guide, and leaned heavily on Nikitol's battery-building videos while I worked. I treated battery safety as a first-class requirement, not an afterthought, because mistakes here fail fast.
+                      The battery was the biggest learning curve. I used the book "DIY Lithium Batteries" by Micah Toll as my primary guide, and leaned heavily on his battery-building videos while I worked. I treated battery safety as a first-class requirement, not an afterthought, because mistakes here fail fast.
                     </p>
                     <ProjectImage 
                       src="/images/personal-projects/diy-electric-skateboard/supplies-and-spot-welder.webp"
