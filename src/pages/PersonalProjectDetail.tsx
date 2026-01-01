@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import { Button } from "../components/ui/button";
 import { slugify } from "../lib/utils";
 import BlogLayout from "../components/BlogLayout";
+import AuthorSignOff from "../components/AuthorSignOff";
 
 const personalProjects = [
   {
@@ -21,7 +22,7 @@ const personalProjects = [
 // Helper component for safe image rendering
 const ProjectImage = ({ src, alt }: { src: string; alt: string }) => {
   return (
-    <div className="blog-media my-8">
+    <div className="blog-media my-8 w-[90%] sm:w-[70%] md:w-[65%] mx-auto">
       <img
         src={src}
         alt={alt}
@@ -89,7 +90,7 @@ const PersonalProjectDetail = () => {
                 </Button>
                 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl text-gray-800 font-semibold tracking-normal text-accent mb-4">
-                  DIY Electric Skateboard (2020)
+                  DIY Electric Skateboard
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-accent/80 leading-relaxed mb-12">
@@ -97,14 +98,14 @@ const PersonalProjectDetail = () => {
                 </p>
 
                 <BlogLayout>
-                  <div className="prose prose-lg max-w-none text-accent/90 space-y-8 [&>section>p]:mx-3 [&>section>p]:md:mx-auto [&>section>p]:md:max-w-2xl [&>section>ul]:mx-3 [&>section>ul]:md:mx-auto [&>section>ul]:md:max-w-2xl [&>section>ol]:mx-3 [&>section>ol]:md:mx-auto [&>section>ol]:md:max-w-2xl [&>section>.blog-media]:mx-3 [&>section>.blog-media]:md:mx-auto [&>section>.blog-media]:md:max-w-2xl">
+                  <div className="prose prose-lg max-w-none text-accent/90 space-y-8 [&>section>p]:mx-3 [&>section>p]:md:mx-auto [&>section>p]:md:max-w-2xl [&>section>ul]:mx-3 [&>section>ul]:md:mx-auto [&>section>ul]:md:max-w-2xl [&>section>ol]:mx-3 [&>section>ol]:md:mx-auto [&>section>ol]:md:max-w-2xl">
                   <section className="space-y-6">
                     <h2 className="text-2xl sm:text-3xl font-semibold text-accent mb-4 mt-12">Overview</h2>
                     <p className="text-base sm:text-lg leading-relaxed">
                       I built a custom electric skateboard from scratch, including the battery pack, enclosure, drivetrain setup, and controller tuning. The goal was a board that felt comfortable over rough pavement, had strong power delivery across the charge range, and stayed reliable under real riding.
                     </p>
                     <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/01-book-cover.jpg"
+                      src="/images/personal-projects/diy-electric-skateboard/book-cover.webp"
                       alt="DIY Lithium Batteries book cover"
                     />
                   </section>
@@ -115,7 +116,7 @@ const PersonalProjectDetail = () => {
                       The battery was the biggest learning curve. I used the book "DIY Lithium Batteries" by Micah Toll as my primary guide, and leaned heavily on Nikitol's battery-building videos while I worked. I treated battery safety as a first-class requirement, not an afterthought, because mistakes here fail fast.
                     </p>
                     <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/02-supplies-and-spot-welder.jpg"
+                      src="/images/personal-projects/diy-electric-skateboard/supplies-and-spot-welder.webp"
                       alt="Spot welder and supplies laid out on table"
                     />
                   </section>
@@ -136,7 +137,7 @@ const PersonalProjectDetail = () => {
                       To support flex, I built the enclosure in a scale-like segmented form, so each section could move slightly relative to the next. That approach also made the enclosure easier to print on an Ender 3 and easier to iterate on without reprinting a single massive part.
                     </p>
                     <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/05-enclosure-on-board.jpg"
+                      src="/images/personal-projects/diy-electric-skateboard/enclosure-on-board.webp"
                       alt="Enclosure mounted on the board"
                     />
                   </section>
@@ -150,7 +151,7 @@ const PersonalProjectDetail = () => {
                       This segmentation affected wiring. To keep the pack flexible, I could not rely on continuous nickel strip runs everywhere. I had to use wire bridging between sections, which is why the internal layout looks the way it does.
                     </p>
                     <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/04-battery-pack-layout.jpg"
+                      src="/images/personal-projects/diy-electric-skateboard/battery-packs-in-enclosure.webp"
                       alt="Battery pack inside the enclosure, top-down view"
                     />
                   </section>
@@ -164,7 +165,7 @@ const PersonalProjectDetail = () => {
                       This was also where the build stopped feeling like "electronics" and started feeling like systems engineering. Every decision affected heat, clearance, strain relief, serviceability, and failure modes.
                     </p>
                     <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/06-workbench-pack-sections.jpg"
+                      src="/images/personal-projects/diy-electric-skateboard/battery-packs.webp"
                       alt="Workbench showing pack sections, BMS diagrams, and tools"
                     />
                   </section>
@@ -182,7 +183,7 @@ const PersonalProjectDetail = () => {
                       After the battery was complete, I tuned the VESC controller and iterated on settings over time. I also played with gearing ratios to dial in acceleration, efficiency, and ride feel.
                     </p>
                     <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/03-vesc-wiring.jpg"
+                      src="/images/personal-projects/diy-electric-skateboard/vesc-wiring.webp"
                       alt="Close-up of VESC wiring and ESC wiring on board"
                     />
                   </section>
@@ -206,8 +207,8 @@ const PersonalProjectDetail = () => {
                       Over time, I swapped decks to something stiffer with better footing that made me feel more locked in. The flexible deck was fun, but the stability tradeoff became obvious once the power was real.
                     </p>
                     <ProjectImage 
-                      src="/images/personal-projects/diy-electric-skateboard/07-wheel-closeup.jpg"
-                      alt="Wheel close-up showing Boosted 105s"
+                      src="/images/personal-projects/diy-electric-skateboard/complete-board-bottom.webp"
+                      alt="Complete board bottom view"
                     />
                   </section>
 
@@ -230,6 +231,8 @@ const PersonalProjectDetail = () => {
                       This build was a strong "hardware meets software" challenge. The battery work was physical and safety-critical, the enclosure demanded iteration and real constraints, and the VESC tuning felt like programming a machine with real consequences. It was one of those projects where you can't fake understanding, because the system tells you immediately when something is wrong.
                     </p>
                   </section>
+                  
+                  <AuthorSignOff />
                   </div>
                 </BlogLayout>
               </motion.div>

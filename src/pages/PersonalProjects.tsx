@@ -9,10 +9,7 @@ const personalProjects = [
   {
     title: "DIY Electric Skateboard",
     description: "Built a custom electric skateboard from scratch using a VESC controller, brushless motor, and custom battery pack. Learned about motor control, battery management systems, and mechanical design.",
-  },
-  {
-    title: "Placeholder Personal Build",
-    description: "A curiosity-driven project exploring new technologies and creative problem-solving outside of web development.",
+    image: "/images/personal-projects/diy-electric-skateboard/vesc-wiring.webp",
   },
 ];
 
@@ -66,7 +63,7 @@ const PersonalProjects = () => {
         {/* Projects Grid */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className={`grid grid-cols-1 ${personalProjects.length === 1 ? "md:grid-cols-1 place-items-center" : "md:grid-cols-2"} gap-8`}>
               {personalProjects.map((project, index) => (
                 <motion.div
                   key={index}
@@ -74,6 +71,7 @@ const PersonalProjects = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
+                  className={personalProjects.length === 1 ? "w-full max-w-xl" : ""}
                 >
                   <Card 
                     className="h-full flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1"
@@ -82,19 +80,37 @@ const PersonalProjects = () => {
                     role="link"
                     tabIndex={0}
                   >
-                    <CardHeader>
+                    <CardHeader className={personalProjects.length === 1 ? "text-center" : ""}>
                       <CardTitle className="text-2xl font-semibold text-accent">
                         {project.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="flex-1">
-                      <CardDescription className="text-base text-accent/80 leading-relaxed">
+                    <CardContent className={`flex-1 ${personalProjects.length === 1 ? "text-center" : ""}`}>
+                      <CardDescription className="text-base text-accent/80 leading-relaxed max-w-[48ch] mx-auto">
                         {project.description}
                       </CardDescription>
-                      {/* Optional placeholder image area */}
-                      <div className="mt-4 w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
-                        <span className="text-gray-400 text-sm">Image placeholder</span>
-                      </div>
+                      {project.image && (
+                        project.title === "DIY Electric Skateboard" ? (
+                          <div className="mt-6 mx-auto w-[80%]">
+                            <div className="aspect-[16/9] rounded-lg overflow-hidden bg-muted">
+                              <img 
+                                src={project.image} 
+                                alt={`${project.title} build supplies and spot welder`}
+                                className="w-full h-full object-cover object-[50%_40%]"
+                                loading="lazy"
+                              />
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="mt-6 w-full aspect-[16/9] rounded-lg overflow-hidden">
+                            <img 
+                              src={project.image} 
+                              alt={`${project.title} build supplies and spot welder`}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        )
+                      )}
                     </CardContent>
                     <CardFooter>
                       <Button

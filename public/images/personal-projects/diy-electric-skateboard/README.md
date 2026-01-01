@@ -2,19 +2,20 @@
 
 This folder contains images for the DIY Electric Skateboard project detail page.
 
-## Expected Image Files
+## Image Files
 
-Please add the following images to this folder:
+The following WebP images are used in the project:
 
-1. `01-book-cover.jpg` - DIY Lithium Batteries book cover
-2. `02-supplies-and-spot-welder.jpg` - spot welder + supplies laid out on table
-3. `03-vesc-wiring.jpg` - close-up of VESC wiring / ESC wiring on board
-4. `04-battery-pack-layout.jpg` - the battery pack inside the enclosure (top-down view)
-5. `05-enclosure-on-board.jpg` - enclosure mounted on the board (circled photo is fine)
-6. `06-workbench-pack-sections.jpg` - the bench shot showing pack sections / BMS diagrams and tools
-7. `07-wheel-closeup.jpg` - wheel close-up (Boosted 105s)
+1. `book-cover.webp` - DIY Lithium Batteries book cover
+2. `supplies-and-spot-welder.webp` - spot welder + supplies laid out on table
+3. `vesc-wiring.webp` - close-up of VESC wiring / ESC wiring on board
+4. `battery-packs-in-enclosure.webp` - the battery pack inside the enclosure (top-down view)
+5. `enclosure-on-board.webp` - enclosure mounted on the board
+6. `battery-packs.webp` - the bench shot showing pack sections / BMS diagrams and tools
+7. `complete-board-bottom.webp` - complete board bottom view
+8. `original-complete-board-top.webp` - original complete board top view
 
 ## Image Format
 
-JPG format is expected. Images will be displayed responsively with max-width 100% and rounded corners.
+WebP format is used for optimal performance. Images are displayed responsively with max-width 100% and rounded corners.
 
