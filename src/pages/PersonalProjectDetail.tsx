@@ -246,9 +246,6 @@ const PersonalProjectDetail = () => {
                   </section>
 
                   <section className="space-y-6">
-                    <p className="text-base sm:text-lg leading-relaxed font-semibold text-accent/90 mt-12">
-                      Interested in this kind of work?
-                    </p>
                     <p className="text-base sm:text-lg leading-relaxed -mt-2">
                       If you're building something similar or just want to compare notes, feel free to{" "}
                       <a
