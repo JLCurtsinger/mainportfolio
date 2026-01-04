@@ -12,3 +12,5 @@ Use lowercase, hyphen-separated names:
 
 Prefer WebP format for optimal performance. Recommended dimensions: 800x600px or similar aspect ratio.
 
+
+

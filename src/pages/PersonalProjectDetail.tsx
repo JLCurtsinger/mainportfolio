@@ -69,6 +69,19 @@ const PersonalProjectDetail = () => {
   // Special handling for DIY Electric Skateboard story page
   const isSkateboardProject = slugify(project.title) === "diy-electric-skateboard";
 
+  const handleContactClick = () => {
+    navigate('/');
+    setTimeout(() => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        const dialogTrigger = document.querySelector('[data-contact-trigger]') as HTMLButtonElement;
+        if (dialogTrigger && !document.querySelector('[role="dialog"]')) {
+          dialogTrigger.click();
+        }
+      }, 500);
+    }, 100);
+  };
+
   if (isSkateboardProject) {
     return (
       <>
@@ -229,6 +242,26 @@ const PersonalProjectDetail = () => {
                     <h2 className="text-2xl sm:text-3xl font-semibold text-accent mb-4 mt-12">Why this project still matters to me</h2>
                     <p className="text-base sm:text-lg leading-relaxed">
                       This build was a strong "hardware meets software" challenge. The battery work was physical and safety-critical, the enclosure demanded iteration and real constraints, and the VESC tuning felt like programming a machine with real consequences. It was one of those projects where you can't fake understanding, because the system tells you immediately when something is wrong.
+                    </p>
+                  </section>
+
+                  <section className="space-y-6">
+                    <p className="text-base sm:text-lg leading-relaxed font-semibold text-accent/90">
+                      Interested in this kind of work?
+                    </p>
+                    <p className="text-base sm:text-lg leading-relaxed">
+                      If you're building something similar, exploring hardware-software projects, or just want to compare notes, feel free to{" "}
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleContactClick();
+                        }}
+                        className="text-accent underline hover:text-accent/80 transition-colors"
+                      >
+                        reach out
+                      </a>
+                      .
                     </p>
                   </section>
                   
