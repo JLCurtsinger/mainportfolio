@@ -115,7 +115,7 @@ const PersonalProjectDetail = () => {
                   <section className="space-y-6">
                     <h2 className="text-2xl sm:text-3xl font-semibold text-accent mb-4 mt-12">Overview</h2>
                     <p className="text-base sm:text-lg leading-relaxed">
-                      I built a custom electric skateboard from scratch, including the battery pack, enclosure, drivetrain setup, and controller tuning. The goal was a board that felt comfortable over rough pavement, had strong power delivery across the charge range, and stayed reliable under real riding.
+                    I built a custom electric skateboard from scratch, including the battery pack, enclosure, drivetrain setup, and controller tuning. The goal was a board that felt comfortable over rough pavement, had reliable power delivery across the charge range, and remained safe in high-vibration, real-world conditions.
                     </p>
                   </section>
 
