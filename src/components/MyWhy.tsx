@@ -20,7 +20,7 @@ const MyWhy = () => {
                 Vitacheck
               </a>
             </h3>
-            <p>I built this as the capstone project for my Bachelors program at Arizona State University, but it came from somewhere earlier and deeper. It's about making drug safety more personal and intuitive. Something that uses emerging tech to account for the risks people don't always see coming. This one matters to me more than I usually say.</p>
+            <p>I built this as the capstone project for my bachelor’s degree at Arizona State University, but it came from somewhere earlier and deeper. It's about making drug safety more personal and intuitive. Something that uses emerging tech to account for the risks people don't always see coming. This one matters to me more than I usually say.</p>
           </div>
 
           <div>
